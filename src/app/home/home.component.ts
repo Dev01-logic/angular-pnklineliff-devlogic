@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
                   } else {
                     //alert('TEST');
                     //this.router.navigate(['appointment']);
-                    this.router.navigate(['register']);
+                   this.router.navigate(['register']);
                   }
                 });
             })

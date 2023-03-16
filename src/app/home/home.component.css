@@ -1,0 +1,18 @@
+.center_margin {
+  margin-top: 20px;
+}
+
+.btn_login {
+  /* background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;*/
+  width: 200px;
+  background-color: rgb(14, 200, 99);
+  border-radius: 50px;
+}
+.txt_header {
+  color: rgb(14, 200, 99);
+}
