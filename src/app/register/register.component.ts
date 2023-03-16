@@ -15,6 +15,16 @@ type UnPromise<T> = T extends Promise<infer X> ? X : T;
 export class RegisterComponent implements OnInit {
   nameline: String;
   urlimg: String;
+
+  //Chcek numberOnly
+  numberOnly(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+
+  }
   constructor(private http: HttpClient, private router: Router) {}
   os: ReturnType<typeof liff.getOS>;
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
@@ -32,7 +42,7 @@ export class RegisterComponent implements OnInit {
           })
           .catch(console.error);
       } else {
-       liff.login();
+         liff.login();
       }
     });
   }
