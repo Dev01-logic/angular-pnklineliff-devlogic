@@ -85,4 +85,8 @@ export class RegisterComponent implements OnInit {
         }
       });
   }
+  onlogout(event?: MouseEvent) {
+    liff.logout();
+    this.router.navigate(['home']);
+  }
 }
