@@ -1,6 +1,3 @@
-.center_margin {
-  margin-top: 75px;
-}
 
 .btn_login {
   /* background-color: transparent;
@@ -10,10 +7,19 @@
   overflow: hidden;
   outline: none;*/
   width: 200px;
-  background-color: rgb(14, 200, 99);
+  background-color :rgb(14, 200, 99);
   border-radius: 50px;
 }
 .txt_header {
-  color: rgb(14, 200, 99);
-  margin-top: 50px;
+  color:  #35405e ;
+  margin-top: 85px;
+}
+.txt_header_h1 {
+  margin-top: 35px;
+}
+.center_margin_btn {
+  margin-top: 200px;
+}
+.center_margin {
+  margin-top: 100px;
 }

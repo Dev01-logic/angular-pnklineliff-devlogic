@@ -2,11 +2,7 @@
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-body{
-  background-image: url('https://cdn.jsdelivr.net/gh/TheNunHahey/angular-DEV3@main/src/assets/img/19366.jpg');
-  width: auto;
-  height: auto;
-}
+
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
