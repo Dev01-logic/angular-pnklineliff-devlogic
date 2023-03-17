@@ -6,7 +6,7 @@
       alt="Hospital"
       style="width: auto; height: 150px;background-color: transparent;"
     />
-    <div class="dtext-center">
+    <div class="text-center">
       <h1>{{ nameline }}</h1>
     </div>
   </div> <br>
@@ -17,7 +17,7 @@
       id="datatableexample"
     >
       <thead>
-        <tr>
+        <tr class="text-center">
           <th>Date</th>
           <th>Time</th>
           <th>Clinic</th>
@@ -41,8 +41,8 @@
       (click)="onlogout($event)"
     >
       <span class="text-white"
-        ><i class="fas fa-sign-out-alt fa-1x text-white text-center"></i
-        >Logout</span
+        ><i class="fas fa-sign-out-alt fa-1x text-white fw-bold text-center"></i
+        > Log out</span
       >
     </button>
   </div>
