@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
           })
           .catch(console.error);
       } else {
-         //liff.login();
+         liff.login();
       }
     });
   }
