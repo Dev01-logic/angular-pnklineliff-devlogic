@@ -31,7 +31,7 @@ export class AppointmentComponent implements OnInit {
   os: ReturnType<typeof liff.getOS>;
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
   ngOnInit() {
-    liff.init({ liffId: '1657421042-ekawW2jw' }).then(() => {
+    liff.init({ liffId: '1660756547-zRWjKKmP' }).then(() => {
       this.os = liff.getOS();
       if (liff.isLoggedIn()) {
         liff
@@ -102,10 +102,10 @@ export class AppointmentComponent implements OnInit {
     stringenddate =
       endyear + '-' + stringendmonth + '-' + stringendday + 'T00:00:00';
 
-    console.log(newdate); //2023-06-15T00:00:00
+    //console.log(newdate); //2023-06-15T00:00:00
 
     let url =
-      'https://dev-logic.net/dxapi/ProductRESTService.svc/EnquirePatientAppointment';
+      'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/EnquirePatientAppointment';
     this.http
       .post(url, {
         param: {
@@ -118,15 +118,12 @@ export class AppointmentComponent implements OnInit {
       })
       .subscribe((data) => {
         this.data;
-        console.log(data);
+        //console.log(data);
         //this.data = response.data;
         this.data = data['ListResultDetail'];
       });
   }
 
-  onTest2(event?: MouseEvent) {
-    this.router.navigate(['home']);
-  }
   onlogout(event?: MouseEvent) {
     liff.logout();
     this.router.navigate(['home']);

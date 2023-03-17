@@ -14,13 +14,13 @@ type UnPromise<T> = T extends Promise<infer X> ? X : T;
 export class HomeComponent implements OnInit {
   result: Boolean;
   result2: Boolean;
-
+  constructor(private http: HttpClient, private router: Router) {}
   //.init({ liffId: '1657421042-ekawW2jw' })
   os: ReturnType<typeof liff.getOS>;
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
   ngOnInit(): void {
     liff
-      .init({ liffId: '1657421042-ekawW2jw' })
+      .init({ liffId: '1660756547-zRWjKKmP' })
       .then(() => {
         this.os = liff.getOS();
         if (liff.isLoggedIn()) {
@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
               this.profile = profile;
               console.log(this.profile.userId);
               let url =
-                'https://dev-logic.net/dxapi/ProductRESTService.svc/MobileEnquireLineRegister';
+                'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileEnquireLineRegister';
               this.http
                 .post(url, {
                   param: {
@@ -40,10 +40,10 @@ export class HomeComponent implements OnInit {
                 })
                 .toPromise()
                 .then((data: any) => {
-                  console.log(data);
-                  //console.log(data.LineRegistered);
+                  //console.log(data);
+                  console.log(data.LineRegistered);
                   this.result = data.LineRegistered;
-                  if (data.HN) {
+                  if (data.HN != '') {
                     this.router.navigate(['appointment'], {
                       queryParams: {
                         HN: data.HN,
@@ -51,11 +51,8 @@ export class HomeComponent implements OnInit {
                     });
                   }
                   if (this.result) {
-                    //alert('TEST');
                   } else {
-                    //alert('TEST');
-                    //this.router.navigate(['appointment']);
-                   this.router.navigate(['register']);
+                    this.router.navigate(['register']);
                   }
                 });
             })
@@ -65,38 +62,6 @@ export class HomeComponent implements OnInit {
         }
       })
       .catch(console.error);
-  }
-
-  constructor(private http: HttpClient, private router: Router) {}
-
-  onTest(event?: MouseEvent) {
-    let url =
-      'https://dev-logic.net/dxapi/ProductRESTService.svc/MobileEnquireLineRegister';
-    this.http
-      .post(url, {
-        param: {
-          ContextKey: 'ReU',
-          LineUserID: 'Ue9d21deca4c514a40bfdd965f6996e22',
-        },
-      })
-      .toPromise()
-      .then((data: any) => {
-        console.log(data);
-        //console.log(data.LineRegistered);
-        this.result = data.LineRegistered;
-      });
-    if (this.result) {
-      //this.router.navigate(['appointment']);
-      //alert('TEST');
-    } else {
-      //alert('TEST');
-      this.router.navigate(['appointment']);
-    }
-  }
-
-  onTest3(event?: MouseEvent) {
-    this.result2 = true;
-    this.router.navigate(['register']);
   }
 }
 

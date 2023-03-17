@@ -18,18 +18,17 @@ export class RegisterComponent implements OnInit {
 
   //Chcek numberOnly
   numberOnly(event): boolean {
-    const charCode = (event.which) ? event.which : event.keyCode;
+    const charCode = event.which ? event.which : event.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
       return false;
     }
     return true;
-
   }
   constructor(private http: HttpClient, private router: Router) {}
   os: ReturnType<typeof liff.getOS>;
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
   ngOnInit() {
-    liff.init({ liffId: '1657421042-ekawW2jw' }).then(() => {
+    liff.init({ liffId: '1660756547-zRWjKKmP' }).then(() => {
       this.os = liff.getOS();
       if (liff.isLoggedIn()) {
         liff
@@ -42,7 +41,7 @@ export class RegisterComponent implements OnInit {
           })
           .catch(console.error);
       } else {
-         liff.login();
+        liff.login();
       }
     });
   }
@@ -59,7 +58,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(event?: MouseEvent) {
     console.log(this.userprofileForm.value);
     let url =
-      'https://dev-logic.net/dxapi/ProductRESTService.svc/MobileUpdateLineRegister';
+      'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileUpdateLineRegister';
     this.http
       .post(url, {
         param: {
