@@ -29,8 +29,6 @@
           <label class="form-label fw-bold" for="txt_idcard"
             >บัตรประจำตัวประชาชน / THAI NATIONAL ID CARD</label
           >
-
-          
           <input
             type="text" (keypress)="numberOnly($event)"
             formControlName="pid"
@@ -72,18 +70,17 @@
         </div>
       </form>
     </div>
-
-    <div class="text-center center_margin">
-      <button
-        type="button"
-        class="btn btn-secondary btn-lg btn_logout"
-        (click)="onlogout($event)"
+  </div>
+  <div class="text-center center_margin">
+    <button
+      type="button"
+      class="btn btn-secondary btn-lg btn_sign_out"
+      (click)="onlogout($event)"
+    >
+      <span class="text-white"
+        ><i class="fas fa-sign-out-alt fa-1x text-white text-center"></i
+        >Log out</span
       >
-        <span class="text-white"
-          ><i class="fas fa-sign-out-alt fa-1x text-white text-center"></i
-          >Logout</span
-        >
-      </button>
-    </div>
+    </button>
   </div>
 </div>
