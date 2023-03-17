@@ -43,17 +43,21 @@ export class HomeComponent implements OnInit {
                   //console.log(data);
                   console.log(data.LineRegistered);
                   this.result = data.LineRegistered;
+
                   if (data.HN != '') {
                     this.router.navigate(['appointment'], {
                       queryParams: {
                         HN: data.HN,
                       },
                     });
-                  }
-                  if (this.result) {
-                  } else {
+                  } else if (this.result) {
                     this.router.navigate(['register']);
                   }
+                  else
+                  {
+                    this.router.navigate(['notfound']);
+                  }
+
                 });
             })
             .catch(console.error);
