@@ -15,6 +15,7 @@
     </div>
   </div>
 <br>
+
   <div
     class="d-flex align-items-center justify-content-center"
     style="padding-bottom:30px"
@@ -27,7 +28,7 @@
       >
         <div class="form-group" style="padding-bottom:30px">
           <label class="form-label fw-bold" for="txt_idcard"
-            >บัตรประจำตัวประชาชน / THAI NATIONAL ID CARD</label
+            >บัตรประจำตัวประชาชน / ID Card</label
           >
           <input
             type="text" (keypress)="numberOnly($event)"
@@ -35,7 +36,7 @@
             class="form-control"
             id="txt_idcard" maxlength="13"
             aria-describedby="IDCard"
-            placeholder="บัตรประจำตัวประชาชน / THAI NATIONAL ID CARD"
+            placeholder="บัตรประจำตัวประชาชน / ID Card"
             style="border-radius: 50px;"
           />
         </div>
@@ -53,7 +54,8 @@
         <div class="form-check mb-3">
           <label class="form-check-label">
             <small id="emailHelp" class="form-text text-dark">
-             *หมายเหตุ กรุณาระบุหมายเลขบัตรประชาชน และหมายเลขโทรศัพท์
+             <span class="text-danger fw-bold">*หมายเหตุ </span>
+             กรุณาระบุหมายเลขบัตรประชาชน และหมายเลขโทรศัพท์
               ที่ลงทะเบียนไว้กับทางโรงพยาบาล</small
             >
           </label>
@@ -65,22 +67,23 @@
             type="submit"
             [disabled]="!userprofileForm.valid"
           >
-            <i class="fas fa-sign-in-alt fa-1x"></i> Sign Up
+            <i class="fas fa-sign-in-alt fa-1x fw-bold"></i> Sign Up
           </button>
         </div>
       </form>
+
+      <div class="text-center center_margin">
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg btn_sign_out"
+          (click)="onlogout($event)"
+        >
+          <span class="text-white"
+            ><i class="fas fa-sign-out-alt fa-1x text-white fw-bold text-center"></i
+            > Log out</span
+          >
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="text-center center_margin">
-    <button
-      type="button"
-      class="btn btn-secondary btn-lg btn_sign_out"
-      (click)="onlogout($event)"
-    >
-      <span class="text-white"
-        ><i class="fas fa-sign-out-alt fa-1x text-white text-center"></i
-        >Log out</span
-      >
-    </button>
   </div>
 </div>
