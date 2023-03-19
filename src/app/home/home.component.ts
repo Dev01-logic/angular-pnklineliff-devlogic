@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
                 .toPromise()
                 .then((data: any) => {
                   //console.log(data);
-                  console.log(data.LineRegistered);
+                  //console.log(data.LineRegistered);
                   this.result = data.LineRegistered;
 
                   if (data.HN != '') {
