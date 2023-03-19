@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
                         HN: data.HN,
                       },
                     });
-                  } else if ((data.HN = '' && !this.result)) {
+                  } else if ((data.HN = '' && this.result)) {
                     this.router.navigate(['register']);
                   } else {
                     this.router.navigate(['notfound']);
