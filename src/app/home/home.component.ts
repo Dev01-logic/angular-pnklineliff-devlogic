@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
                   //this.router.navigate(['register']);
                   //}
                   else {
-                    this.router.navigate(['notfound']);
+                    this.router.navigate(['register']);
                   }
                 });
             })
