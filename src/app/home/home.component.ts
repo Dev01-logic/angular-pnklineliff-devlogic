@@ -40,30 +40,32 @@ export class HomeComponent implements OnInit {
                 })
                 .toPromise()
                 .then((data: any) => {
-                  //console.log(data);
+                  console.log(data);
                   //console.log(data.LineRegistered);
                   this.result = data.LineRegistered;
 
-                  if (data.HN != '') {
+                  if (data.HN != '' && this.result) {
                     this.router.navigate(['appointment'], {
                       queryParams: {
                         HN: data.HN,
                       },
                     });
-                  } else if (this.result) {
-                    //this.router.navigate(['register']);
-                  } else {
+                  } else if ((data.HN = '' && !this.result)) {
                     this.router.navigate(['register']);
-                    //this.router.navigate(['notfound']);
+                  } else {
+                    this.router.navigate(['notfound']);
                   }
                 });
             })
             .catch(console.error);
         } else {
-          liff.login();
         }
       })
       .catch(console.error);
+  }
+
+  onClick(event?: MouseEvent) {
+    liff.login();
   }
 }
 
