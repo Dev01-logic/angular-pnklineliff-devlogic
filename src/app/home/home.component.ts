@@ -19,9 +19,9 @@ export class HomeComponent implements OnInit {
   os: ReturnType<typeof liff.getOS>;
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
   ngOnInit(): void {
-    console.log('test');
+    //console.log('test');
     liff
-      .init({ liffId: '1660766049-nZKxdW65' })
+      .init({ liffId: '1660756547-zRWjKKmP' })
       .then(() => {
         this.os = liff.getOS();
         if (liff.isLoggedIn()) {
