@@ -1,17 +1,29 @@
-<div class="container" style="margin-top: 50px;">
+
+ <div class="text-center logo">
+  <img
+    src="https://dev-logic.net/dxapi/img/pnk/kiosk_hos_400.png"
+    class="rounded-circle rounded_circle_img"
+    alt="Hospital"
+  />
+</div>
+
+
+<div style="margin-top: 50px;">
+
   <div class="text-center">
     <img
       src="{{ urlimg }}"
       class="rounded-circle"
-      alt="Hospital"
+      alt="user"
       style="width: auto; height: 150px;background-color: transparent;"
     />
     <div class="text-center">
       <h1>{{ nameline }}</h1>
     </div>
-  </div> <br>
+  </div> 
+  
+  <br>
   <div class="text-center">
-
     <table
       class="table table-bordered table-striped table-hover"
       id="datatableexample"
@@ -25,6 +37,7 @@
         </tr>
       </thead>
       <tbody>
+     
         <tr *ngFor="let group of data">
           <td>{{ group.AppointDateTimeFromShow }}</td>
           <td>{{ group.AppointDateTimeFrom | date:"HH:mm"}}</td>
