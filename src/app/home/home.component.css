@@ -23,7 +23,9 @@
 .center_margin {
   margin-top: 100px;
 }
-
+.txt_header_h1 {
+  margin-top: 35px;
+}
 
 @media only screen and (max-width: 1024px) {
   .rounded_circle_img {
@@ -32,35 +34,20 @@
   .rounded_circle_logo {
     width: 300px;
   }
-  .txt_header_h1 {
-    margin-top: 35px;
-    font-size: 46px;
-  }
-}
-@media only screen and (max-width: 768px) {
-
-  .rounded_circle_img {
-    width: 500px;
-  }
-  .rounded_circle_logo {
-    width: 250px;
-  }
-  .txt_header_h1 {
-    margin-top: 35px;
-  }
-
 }
 @media only screen and (max-width: 480px) {
-
   .rounded_circle_img {
     width: 200px;
   }
   .rounded_circle_logo {
     width: 130px;
   }
-  .txt_header_h1 {
-    margin-top: 35px;
+}
+@media only screen and (max-width: 768px) {
+  .rounded_circle_img {
+    width: 500px;
+  }
+  .rounded_circle_logo {
+    width: 250px;
   }
 }
-
-
