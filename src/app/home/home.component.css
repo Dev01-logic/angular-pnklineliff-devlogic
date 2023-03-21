@@ -1,5 +1,5 @@
-.logo{
-  margin-bottom : 70px;
+.logo {
+  margin-bottom: 70px;
 }
 
 .btn_login {
@@ -17,162 +17,50 @@
   color: #35405e;
   margin-top: 85px;
 }
-.txt_header_h1 {
-  margin-top: 35px;
-  
-}
 .center_margin_btn {
   margin-top: 150px;
 }
 .center_margin {
   margin-top: 100px;
 }
-@media only screen and (max-width: 1024px) {
-  .left_column_container {
-    display: table-cell;
-    background-color: #1f3d7d;
-    padding: 10px 10px 10px 10px;
-    min-width: 150px;
-    width: 20%;
-    vertical-align: top;
-  }
-  .left_menu .hide_menu_button {
-    text-align: center;
-    padding: 10px 0px;
-    margin-bottom: 10px;
-    display: none;
-  }
 
-  .header_right_text_title {
-    font-size: 1.2em;
-  }
-  .copyright .line-1 {
-    font-size: 0.8em;
-  }
+
+@media only screen and (max-width: 1024px) {
   .rounded_circle_img {
     width: 300px;
   }
-}
-@media only screen and (max-width: 480px) {
-  .form_full_width .caption {
-    display: block;
-    width: 100%;
+  .rounded_circle_logo {
+    width: 300px;
   }
-  .form_full_width .input {
-    display: block;
-    width: 100%;
-  }
-  .form_full_width .input2 {
-    display: block;
-    width: 100%;
-  }
-  .form_half_width .caption {
-    display: block;
-    width: 100%;
-  }
-  .form_half_width .input {
-    display: block;
-    width: 100%;
-  }
-
-  .button_container {
-    padding: 20px 0px;
-  }
-  .button_container .button {
-    margin: 5px 0px;
-    display: block;
-    width: 100%;
-  }
-  .button_container .left {
-    display: block;
-    width: 100%;
-  }
-  .button_container .right {
-    display: block;
-    width: 100%;
-  }
-
-  .copyright {
-    display: none;
-  }
-  .rounded_circle_img {
-    width: 130px;
+  .txt_header_h1 {
+    margin-top: 35px;
+    font-size: 46px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .left_column_container {
-    display: none;
+
+  .rounded_circle_img {
+    width: 500px;
   }
-  .minimenu_banner {
-    display: block;
-    float: left;
+  .rounded_circle_logo {
+    width: 250px;
+  }
+  .txt_header_h1 {
+    margin-top: 35px;
   }
 
-  .form_full_width .caption {
-    text-align: left;
-    vertical-align: top;
-    display: inline-block;
-    width: 20%;
-  }
-  .form_full_width .input2 {
-    display: inline-block;
-    width: 78%;
-    min-width: 260px;
-  }
-  .form_half_width {
-    margin: 0px 0px;
-    display: inline-block;
-    margin-bottom: 5px;
-    width: 98%;
-  }
-  .form_half_width .caption {
-    text-align: left;
-    vertical-align: top;
-    display: inline-block;
-    width: 20%;
-  }
-  .form_half_width .caption.full {
-    text-align: left;
-    vertical-align: top;
-    display: inline-block;
-    width: 100%;
-  }
-  .form_half_width .input {
-    vertical-align: top;
-    text-align: left;
-    display: inline-block;
-    width: 78%;
-    min-width: 260px;
-  }
-  .form_half_width .input.full {
-    vertical-align: top;
-    text-align: left;
-    display: inline-block;
-    width: 95%;
-    min-width: 260px;
-  }
+}
+@media only screen and (max-width: 480px) {
 
-  .left_column_container {
-    display: none;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 100;
-    min-height: 100vh;
-    width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  }
-  .left_menu .hide_menu_button {
-    display: block;
-  }
-
-  .copyright .line-1 {
-    font-size: 0.8em;
-  }
-  .copyright .line-2 {
-    display: none;
-  }
   .rounded_circle_img {
     width: 200px;
   }
+  .rounded_circle_logo {
+    width: 130px;
+  }
+  .txt_header_h1 {
+    margin-top: 35px;
+  }
 }
+
+
