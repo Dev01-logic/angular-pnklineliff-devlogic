@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
       .init({ liffId: '1660766049-nZKxdW65' })
       .then(() => {
         this.os = liff.getOS();
+        liff.login();
         if (liff.isLoggedIn()) {
           liff
             .getProfile()
@@ -40,12 +41,12 @@ export class HomeComponent implements OnInit {
                 })
                 .toPromise()
                 .then((data: any) => {
-                  console.log(data);
+                  //console.log(data);
                   //console.log(data.LineRegistered);
                   this.result = data.LineRegistered;
 
-                  if (data.HN != '') {
-                    this.router.navigate(['appointment'], {
+                  if (this.profile.userId != '') {
+                    this.router.navigate(['register'], {
                       queryParams: {
                         HN: data.HN,
                       },
@@ -54,7 +55,6 @@ export class HomeComponent implements OnInit {
                   //this.router.navigate(['register']);
                   //}
                   else {
-                    this.router.navigate(['register']);
                   }
                 });
             })
