@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   os: ReturnType<typeof liff.getOS>;
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
   ngOnInit(): void {
+    console.log('test');
     liff
       .init({ liffId: '1660766049-nZKxdW65' })
       .then(() => {
@@ -41,7 +42,6 @@ export class HomeComponent implements OnInit {
                 .toPromise()
                 .then((data: any) => {
                   //console.log(data);
-                  console.log('test');
                   //console.log(data.LineRegistered);
                   this.result = data.LineRegistered;
 
