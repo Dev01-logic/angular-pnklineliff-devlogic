@@ -35,19 +35,19 @@
     width: 300px;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .rounded_circle_img {
     width: 200px;
   }
   .rounded_circle_logo {
-    width: 130px;
+    width: 250px;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
   .rounded_circle_img {
-    width: 300px;
+    width: 180px;
   }
   .rounded_circle_logo {
-    width: 250px;
+    width: 130px;
   }
 }
