@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
       .init({ liffId: '1660766049-nZKxdW65' })
       .then(() => {
         this.os = liff.getOS();
-        liff.login();
         if (liff.isLoggedIn()) {
           liff
             .getProfile()
@@ -42,6 +41,7 @@ export class HomeComponent implements OnInit {
                 .toPromise()
                 .then((data: any) => {
                   //console.log(data);
+                  console.log('test');
                   //console.log(data.LineRegistered);
                   this.result = data.LineRegistered;
 
