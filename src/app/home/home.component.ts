@@ -45,16 +45,15 @@ export class HomeComponent implements OnInit {
                   //console.log(data.LineRegistered);
                   this.result = data.LineRegistered;
 
-                  if (this.profile.userId != '') {
-                    this.router.navigate(['register'], {
+                  if (this.result && data.HN != '') {
+                    this.router.navigate(['appointment'], {
                       queryParams: {
                         HN: data.HN,
                       },
                     });
-                  } //else if (!this.result) {
-                  //this.router.navigate(['register']);
-                  //}
-                  else {
+                  } else if (!this.result) {
+                    this.router.navigate(['register']);
+                  } else {
                   }
                 });
             })
