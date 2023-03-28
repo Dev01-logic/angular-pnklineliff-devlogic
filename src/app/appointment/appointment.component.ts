@@ -16,6 +16,7 @@ declare var $: any;
 })
 export class AppointmentComponent implements OnInit {
   data: any;
+  datanotfound: Boolean = true;
   post: any;
   nameline: String;
   urlimg: String;
@@ -40,7 +41,7 @@ export class AppointmentComponent implements OnInit {
             this.profile = profile;
             this.nameline = this.profile.displayName;
             this.urlimg = this.profile.pictureUrl;
-            console.log(this.profile.userId);
+            //console.log(this.profile.userId);
           })
           .catch(console.error);
       } else {
@@ -117,10 +118,13 @@ export class AppointmentComponent implements OnInit {
         },
       })
       .subscribe((data) => {
-        this.data;
+        //this.data;
         //console.log(data);
         //this.data = response.data;
+        this.datanotfound = data['DataNotFound'];
+        console.log(this.datanotfound);
         this.data = data['ListResultDetail'];
+        console.log(this.data);
       });
   }
 
