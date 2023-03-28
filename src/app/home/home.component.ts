@@ -14,6 +14,7 @@ type UnPromise<T> = T extends Promise<infer X> ? X : T;
 export class HomeComponent implements OnInit {
   result: Boolean;
   result2: Boolean;
+  loading: Boolean = false;
   constructor(private http: HttpClient, private router: Router) {}
   //.init({ liffId: '1657421042-ekawW2jw' })
   os: ReturnType<typeof liff.getOS>;
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit {
               console.log(this.profile.userId);
               let url =
                 'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileEnquireLineRegister';
+              this.loading = true; // Show the loading spinner
               this.http
                 .post(url, {
                   param: {
@@ -44,6 +46,7 @@ export class HomeComponent implements OnInit {
                   //console.log(data);
                   //console.log(data.LineRegistered);
                   this.result = data.LineRegistered;
+                  this.loading = false;
 
                   if (this.result && data.HN != '') {
                     this.router.navigate(['appointment'], {
