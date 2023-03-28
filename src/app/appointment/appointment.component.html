@@ -19,7 +19,7 @@
       <h1 class="h4 txt_header mb-4">ตารางนัดหมาย</h1>
     </div>
 
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-md-center" *ngIf="datanotfound">
       <div *ngFor="let group of data">
         <div class="col-xs-6 col-sm-12 text-center">
           <div class="card mb-4" style="border-radius: 50px;">
@@ -45,6 +45,7 @@
         </div>
       </div>
     </div>
+    <!---->
   </div>
 </div>
 <div class="text-center center_margin_btn">

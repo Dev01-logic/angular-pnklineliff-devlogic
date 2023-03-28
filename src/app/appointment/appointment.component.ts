@@ -122,9 +122,9 @@ export class AppointmentComponent implements OnInit {
         //console.log(data);
         //this.data = response.data;
         this.datanotfound = data['DataNotFound'];
-        console.log(this.datanotfound);
+        //console.log(this.datanotfound);
         this.data = data['ListResultDetail'];
-        console.log(this.data);
+        //console.log(this.data);
       });
   }
 
