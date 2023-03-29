@@ -27,7 +27,7 @@
               <br />
               <!--  <span class="font-weight-bold text-dark">วันเวลานัดหมาย</span>-->
               <span class="font-weight-bold"
-                >{{ group.AppointDateTimeFromShow
+                >{{ group.AppointDateTimeFromShow | date: 'ddMMYYYY'
                 }}<span class="font-weight-bold text-dark"> </span>
                 {{ group.AppointDateTimeFrom | date: 'HH:mm' }} น.
               </span>
