@@ -32,10 +32,13 @@
                 {{ group.AppointDateTimeFrom | date: 'HH:mm' }} น.
               </span>
             </div>
-            <h6 class="font-weight-bold text-dark text-center">
-              <span class="font-weight-bold">{{ group.ClinicLocalName }}</span
-              ><br />
-              <span class="font-weight-bold">{{ group.DoctorLocalName }}</span>
+            <h6 class="font-weight-bold text-dark text-left">
+              <span class="font-weight-bold"
+                >แพทย์ : {{ group.DoctorLocalName }}</span
+              >
+              ><br /><span class="font-weight-bold"
+                >คลินิก : {{ group.ClinicLocalName }}</span
+              >
             </h6>
           </div>
         </div>
