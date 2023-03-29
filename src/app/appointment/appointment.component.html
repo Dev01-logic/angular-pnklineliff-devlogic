@@ -25,22 +25,20 @@
           <div class="card mb-4" style="border-radius: 50px;">
             <div class="card-header" style="border-radius: 50px;">
               <br />
-              <h6 class="font-weight-bold text-dark text-center">
-                <span class="font-weight-bold">{{ group.ClinicLocalName }}</span
-                ><br /><br />
-                <span class="font-weight-bold">{{
-                  group.DoctorLocalName
-                }}</span>
-              </h6>
-            </div>
-            <!--  <span class="font-weight-bold text-dark">วันเวลานัดหมาย</span>-->
-            <span class="font-weight-bold"
-              >{{ group.AppointDateTimeFromShow }}<br /><span
-                class="font-weight-bold text-dark"
-                >เวลา
+              <!--  <span class="font-weight-bold text-dark">วันเวลานัดหมาย</span>-->
+              <span class="font-weight-bold"
+                >{{ group.AppointDateTimeFromShow }}<br /><span
+                  class="font-weight-bold text-dark"
+                >
+                </span>
+                {{ group.AppointDateTimeFrom | date: 'HH:mm' }} น.
               </span>
-              {{ group.AppointDateTimeFrom | date: 'HH:mm' }} น.
-            </span>
+            </div>
+            <h6 class="font-weight-bold text-dark text-center">
+              <span class="font-weight-bold">{{ group.ClinicLocalName }}</span
+              ><br /><br />
+              <span class="font-weight-bold">{{ group.DoctorLocalName }}</span>
+            </h6>
           </div>
         </div>
       </div>
