@@ -46,23 +46,9 @@ export class HomeComponent implements OnInit {
                     LineUserID: this.profile.userId,
                   },
                 })
-                .toPromise()
-                .then((data: any) => {
-                  //console.log(data);
-                  //console.log(data.LineRegistered);
+                .subscribe((data: any) => {
                   this.result = data.LineRegistered;
-                  //this.loading = false;
-
-                  if (this.result && data.HN != '') {
-                    this.router.navigate(['appointment'], {
-                      queryParams: {
-                        HN: data.HN,
-                      },
-                    });
-                  } else if (!this.result) {
-                    this.router.navigate(['register']);
-                  } else {
-                  }
+                  console.log(data);
                 });
             })
             .catch(console.error);
