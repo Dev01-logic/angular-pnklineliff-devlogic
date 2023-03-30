@@ -4,11 +4,11 @@
   <div class="card-body">
     <!-- Nested Row within Card Body -->
     <div class="row">
+      <div class="loader-container" *ngIf="loaderService.isLoading | async">
+        <mat-spinner class="spinner"></mat-spinner>
+      </div>
       <div class="col-lg-12">
         <div class="p-5">
-          <div class="loader-container" *ngIf="loaderService.isLoading | async">
-            <mat-spinner class="spinner"></mat-spinner>
-          </div>
           <div class="col ms-6 mb-2 text-center">
             <img
               src="https://dev-logic.net/dxapi/img/pnk/pnk_rh_menu_line_Connect.png"
