@@ -20,7 +20,6 @@ export class InterceptorService implements HttpInterceptor {
     this.loaderService.isLoading.next(true);
 
     return next.handle(req).pipe(
-      timeout(2000),
       finalize(() => {
         this.loaderService.isLoading.next(false);
       })
