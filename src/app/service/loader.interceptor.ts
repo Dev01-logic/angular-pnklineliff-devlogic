@@ -5,7 +5,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, finalize, Observable } from 'rxjs';
+import { BehaviorSubject, finalize, Observable, timeout } from 'rxjs';
 import { LoaderService } from './loader.service';
 
 @Injectable({
@@ -20,6 +20,7 @@ export class InterceptorService implements HttpInterceptor {
     this.loaderService.isLoading.next(true);
 
     return next.handle(req).pipe(
+      timeout(2000),
       finalize(() => {
         this.loaderService.isLoading.next(false);
       })
