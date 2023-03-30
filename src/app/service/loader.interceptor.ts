@@ -10,7 +10,7 @@ import { LoaderService } from './loader.service';
 
 @Injectable()
 export class InterceptorService implements HttpInterceptor {
-  constructor(public loaderService: LoaderService) {}
+  constructor(private loaderService: LoaderService) {}
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
@@ -19,7 +19,6 @@ export class InterceptorService implements HttpInterceptor {
 
     return next.handle(req).pipe(
       finalize(() => {
-        //this.reponseCache.set(req.urlWithParams);
         this.loaderService.isLoading.next(false);
       })
     );

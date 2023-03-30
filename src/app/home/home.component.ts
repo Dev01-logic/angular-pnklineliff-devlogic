@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
-    public loaderService: LoaderService
+    private loaderService: LoaderService
   ) {}
   //.init({ liffId: '1657421042-ekawW2jw' })
   os: ReturnType<typeof liff.getOS>;
@@ -46,7 +46,20 @@ export class HomeComponent implements OnInit {
                     LineUserID: this.profile.userId,
                   },
                 })
-                .subscribe((res) => {});
+                .subscribe((data: any) => {
+                  this.result = data.LineRegistered;
+                  console.log(data);
+                  if (this.result && data.HN != '') {
+                    this.router.navigate(['appointment'], {
+                      queryParams: {
+                        HN: data.HN,
+                      },
+                    });
+                  } else if (!this.result) {
+                    this.router.navigate(['register']);
+                  } else {
+                  }
+                });
             })
             .catch(console.error);
         } else {

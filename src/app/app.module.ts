@@ -6,8 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { ajax, css } from 'jquery';
-//import { MatProgressBarModule } from '@angular/material/progress-bar';
-//import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -25,8 +25,8 @@ import { InterceptorService } from './service/loader.interceptor';
     DataTablesModule,
     RouterModule.forRoot([{ path: '', component: HomeComponent }]),
     AppRoutingModule,
-    //MatProgressBarModule,
-    //MatProgressSpinnerModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
   ],
   declarations: [
     AppComponent,
