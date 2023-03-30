@@ -15,6 +15,7 @@ type UnPromise<T> = T extends Promise<infer X> ? X : T;
 export class HomeComponent implements OnInit {
   result: Boolean;
   result2: Boolean;
+  hn: String;
   //loading: Boolean = false;
   constructor(
     private http: HttpClient,
@@ -48,18 +49,19 @@ export class HomeComponent implements OnInit {
                 })
                 .subscribe((data: any) => {
                   this.result = data.LineRegistered;
-                  console.log(data);
-                  if (this.result && data.HN != '') {
-                    this.router.navigate(['appointment'], {
-                      queryParams: {
-                        HN: data.HN,
-                      },
-                    });
-                  } else if (!this.result) {
-                    this.router.navigate(['register']);
-                  } else {
-                  }
+                  this.hn = data.HN;
+                  //console.log(data);
                 });
+              if (this.result && this.hn != '') {
+                this.router.navigate(['appointment'], {
+                  queryParams: {
+                    HN: this.hn,
+                  },
+                });
+              } else if (!this.result) {
+                this.router.navigate(['register']);
+              } else {
+              }
             })
             .catch(console.error);
         } else {
