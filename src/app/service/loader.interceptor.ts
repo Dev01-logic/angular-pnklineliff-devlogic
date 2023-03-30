@@ -8,7 +8,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, finalize, Observable } from 'rxjs';
 import { LoaderService } from './loader.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class InterceptorService implements HttpInterceptor {
   constructor(private loaderService: LoaderService) {}
   intercept(
