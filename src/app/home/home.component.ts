@@ -50,8 +50,10 @@ export class HomeComponent implements OnInit {
                 .subscribe((data: any) => {
                   this.result = data.LineRegistered;
                   this.hn = data.HN;
-                  console.log(data);
+                  //console.log(data);
                 });
+              console.log(this.result);
+              console.log(this.hn);
               if (this.result && this.hn != '') {
                 this.router.navigate(['appointment'], {
                   queryParams: {
