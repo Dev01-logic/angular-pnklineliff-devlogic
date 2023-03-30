@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   result: Boolean;
   result2: Boolean;
   hn: String = '';
-  loading: Boolean = true;
+  //loading: Boolean = true;
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit {
                 .subscribe((data: any) => {
                   this.result = data.LineRegistered;
                   this.hn = data.HN;
-                  this.loading = false;
                   //console.log(this.result);
                   //console.log(this.hn);
                   //if (this.result && this.hn != '') {
