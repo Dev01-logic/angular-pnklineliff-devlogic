@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
             .getProfile()
             .then((profile) => {
               this.profile = profile;
-              console.log(this.profile.userId);
+              //console.log(this.profile.userId);
               let url =
                 'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileEnquireLineRegister';
               //this.loading = true; // Show the loading spinner
