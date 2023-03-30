@@ -52,16 +52,16 @@ export class HomeComponent implements OnInit {
                   this.hn = data.HN;
                   //console.log(this.result);
                   //console.log(this.hn);
-                  //if (this.result && this.hn != '') {
-                  //  this.router.navigate(['appointment'], {
-                  //    queryParams: {
-                  //      HN: this.hn,
-                  //    },
-                  //  });
-                  //} else if (!this.result) {
-                  //  this.router.navigate(['register']);
-                  //} else {
-                  //}
+                  if (this.result && this.hn != '') {
+                    this.router.navigate(['appointment'], {
+                      queryParams: {
+                        HN: this.hn,
+                      },
+                    });
+                  } else if (!this.result) {
+                    this.router.navigate(['register']);
+                  } else {
+                  }
                 });
             })
             .catch(console.error);
