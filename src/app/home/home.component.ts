@@ -15,7 +15,7 @@ type UnPromise<T> = T extends Promise<infer X> ? X : T;
 export class HomeComponent implements OnInit {
   result: Boolean;
   result2: Boolean;
-  hn: String;
+  hn: String = '';
   //loading: Boolean = false;
   constructor(
     private http: HttpClient,
