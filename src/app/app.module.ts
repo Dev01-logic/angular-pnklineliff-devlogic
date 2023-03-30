@@ -3,15 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { ajax, css } from 'jquery';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { InterceptorService } from './service/interceptor.service';
 
 @NgModule({
   imports: [
@@ -22,6 +25,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     DataTablesModule,
     RouterModule.forRoot([{ path: '', component: HomeComponent }]),
     AppRoutingModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
   ],
   declarations: [
     AppComponent,
@@ -29,6 +34,9 @@ import { NotfoundComponent } from './notfound/notfound.component';
     AppointmentComponent,
     RegisterComponent,
     NotfoundComponent,
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
   ],
   bootstrap: [AppComponent],
 })

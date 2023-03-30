@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import liff from '@line/liff';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { LoaderService } from '../service/loader.service';
 
 type UnPromise<T> = T extends Promise<infer X> ? X : T;
 
@@ -15,7 +16,11 @@ export class HomeComponent implements OnInit {
   result: Boolean;
   result2: Boolean;
   loading: Boolean = false;
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    public loaderService: LoaderService
+  ) {}
   //.init({ liffId: '1657421042-ekawW2jw' })
   os: ReturnType<typeof liff.getOS>;
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
@@ -33,7 +38,7 @@ export class HomeComponent implements OnInit {
               console.log(this.profile.userId);
               let url =
                 'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileEnquireLineRegister';
-              this.loading = true; // Show the loading spinner
+              //this.loading = true; // Show the loading spinner
               this.http
                 .post(url, {
                   param: {
@@ -46,7 +51,7 @@ export class HomeComponent implements OnInit {
                   //console.log(data);
                   //console.log(data.LineRegistered);
                   this.result = data.LineRegistered;
-                  this.loading = false;
+                  //this.loading = false;
 
                   if (this.result && data.HN != '') {
                     this.router.navigate(['appointment'], {
