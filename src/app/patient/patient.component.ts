@@ -4,6 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import liff from '@line/liff';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { AppointmentComponent } from '../appointment/appointment.component';
 
 type UnPromise<T> = T extends Promise<infer X> ? X : T;
 
@@ -67,10 +70,10 @@ export class PatientComponent implements OnInit {
       })
       .subscribe((data) => {
         //this.data;
-        console.log(data);
+        //console.log(data);
         this.data = JSON.stringify(data['ListOfDetail']);
         this.parsedJson = JSON.parse(this.data);
-        console.log(this.parsedJson);
+        //console.log(this.parsedJson);
         this.tmphn = this.parsedJson[0].HN;
         this.name = this.parsedJson[0].PatientName;
         this.age = this.parsedJson[0].Age;
