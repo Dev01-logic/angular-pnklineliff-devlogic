@@ -19,7 +19,6 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { PatientComponent } from './patient/patient.component';
-import { ChidappointmentComponent } from './patient/chidappointment/chidappointment.component';
 
 import { InterceptorService } from './service/loader.interceptor';
 
@@ -46,7 +45,6 @@ import { InterceptorService } from './service/loader.interceptor';
     RegisterComponent,
     NotfoundComponent,
     PatientComponent,
-    ChidappointmentComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
