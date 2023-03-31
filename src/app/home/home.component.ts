@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
                   //console.log(this.result);
                   //console.log(this.hn);
                   if (this.result && this.hn != '') {
-                    this.router.navigate(['appointment'], {
+                    this.router.navigate(['patient'], {
                       queryParams: {
                         HN: this.hn,
                       },
