@@ -67,7 +67,7 @@ export class PatientComponent implements OnInit {
       .subscribe((data) => {
         //this.data;
         console.log(data);
-        this.data = JSON.stringify(data);
+        this.data = JSON.stringify(data['ListOfDetail']);
         console.log(this.data);
         this.tmphn = this.data.HN;
         this.name = this.data.PatientName;
