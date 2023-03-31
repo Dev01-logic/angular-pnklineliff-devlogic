@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 import liff from '@line/liff';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AppointmentComponent } from '../appointment/appointment.component';
+import { ChidappointmentComponent } from './chidappointment/chidappointment.component';
 
 type UnPromise<T> = T extends Promise<infer X> ? X : T;
 
