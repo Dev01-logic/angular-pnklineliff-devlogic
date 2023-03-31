@@ -67,9 +67,10 @@ export class PatientComponent implements OnInit {
       .subscribe((data) => {
         //this.data;
         console.log(data);
-        //this.tmphn = data['ListOfDetail'].HN;
-        //this.name = data['ListOfDetail'].PatientName;
-        //this.age = data['ListOfDetail'].Age;
+        this.data = JSON.stringify(data);
+        this.tmphn = this.data.HN;
+        this.name = this.data.PatientName;
+        this.age = this.data.Age;
         //this.data = response.data;
         //this.datanotfound = data['DataNotFound'];
         //console.log(this.datanotfound);
