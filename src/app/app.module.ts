@@ -10,12 +10,15 @@ import { ajax, css } from 'jquery';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { PatientComponent } from './patient/patient.component';
+
 import { InterceptorService } from './service/loader.interceptor';
 
 @NgModule({
@@ -31,6 +34,7 @@ import { InterceptorService } from './service/loader.interceptor';
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
+    MatCardModule,
   ],
   declarations: [
     AppComponent,
@@ -38,6 +42,7 @@ import { InterceptorService } from './service/loader.interceptor';
     AppointmentComponent,
     RegisterComponent,
     NotfoundComponent,
+    PatientComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
