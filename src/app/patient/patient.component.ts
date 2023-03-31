@@ -14,6 +14,7 @@ type UnPromise<T> = T extends Promise<infer X> ? X : T;
 })
 export class PatientComponent implements OnInit {
   data: any;
+  parsedJson: any;
   datanotfound: Boolean = true;
   post: any;
   nameline: String;
@@ -68,10 +69,11 @@ export class PatientComponent implements OnInit {
         //this.data;
         console.log(data);
         this.data = JSON.stringify(data['ListOfDetail']);
-        console.log(this.data);
-        this.tmphn = this.data.HN;
-        this.name = this.data.PatientName;
-        this.age = this.data.Age;
+        this.parsedJson = JSON.parse(this.data);
+        console.log(this.parsedJson);
+        this.tmphn = this.parsedJson.HN;
+        this.name = this.parsedJson.PatientName;
+        this.age = this.parsedJson.Age;
         //this.data = response.data;
         //this.datanotfound = data['DataNotFound'];
         //console.log(this.datanotfound);
