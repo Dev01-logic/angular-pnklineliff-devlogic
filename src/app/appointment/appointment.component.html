@@ -2,19 +2,6 @@
 <div class="card">
   <div class="card-body">
     <!-- Nested Row within Card Body -->
-    <div style="margin-top: 30px;">
-      <div class="text-center">
-        <img
-          src="{{ urlimg }}"
-          class="rounded-circle"
-          alt="user"
-          style="width: auto; height: 100px;background-color: transparent;"
-        />
-        <div class="text-center">
-          <h1>{{ nameline }}</h1>
-        </div>
-      </div>
-    </div>
     <div class="text-center" style="margin-top: 30px;">
       <h1 class="h4 txt_header mb-4">ตารางนัดหมาย</h1>
     </div>
@@ -57,16 +44,4 @@
     </div>
     <!---->
   </div>
-</div>
-<div class="text-center center_margin_btn">
-  <button
-    type="button"
-    class="btn btn-secondary btn-lg btn_logout"
-    (click)="onlogout($event)"
-  >
-    <span class="text-white"
-      ><i class="fas fa-sign-out-alt fa-1x text-white fw-bold text-center"></i>
-      Log&nbsp;out</span
-    >
-  </button>
 </div>

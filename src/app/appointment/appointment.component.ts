@@ -3,9 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { Subject } from 'rxjs';
-import liff from '@line/liff';
-
-type UnPromise<T> = T extends Promise<infer X> ? X : T;
 
 @Component({
   selector: 'app-appointment',
@@ -27,26 +24,8 @@ export class AppointmentComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {}
-  os: ReturnType<typeof liff.getOS>;
-  profile: UnPromise<ReturnType<typeof liff.getProfile>>;
+ 
   ngOnInit() {
-    liff.init({ liffId: '1660756547-zRWjKKmP' }).then(() => {
-      this.os = liff.getOS();
-      if (liff.isLoggedIn()) {
-        liff
-          .getProfile()
-          .then((profile) => {
-            this.profile = profile;
-            this.nameline = this.profile.displayName;
-            this.urlimg = this.profile.pictureUrl;
-            //console.log(this.profile.userId);
-          })
-          .catch(console.error);
-      } else {
-        liff.login();
-      }
-    });
-
     this.route.queryParams.subscribe((param) => {
       this.hn = param.HN;
     });
@@ -126,8 +105,4 @@ export class AppointmentComponent implements OnInit {
       });
   }
 
-  onlogout(event?: MouseEvent) {
-    liff.logout();
-    this.router.navigate(['home']);
-  }
 }
