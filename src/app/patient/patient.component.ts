@@ -68,6 +68,7 @@ export class PatientComponent implements OnInit {
         //this.data;
         console.log(data);
         this.data = JSON.stringify(data);
+        console.log(this.data);
         this.tmphn = this.data.HN;
         this.name = this.data.PatientName;
         this.age = this.data.Age;
