@@ -19,6 +19,9 @@ export class PatientComponent implements OnInit {
   nameline: String;
   urlimg: String;
   hn: String;
+  name: String;
+  age: String;
+  tmphn: String;
   //dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
   allUsers: any = [];
@@ -61,9 +64,12 @@ export class PatientComponent implements OnInit {
           ContextKey: 'ReU',
         },
       })
-      .subscribe((data) => {
+      .subscribe((data: any) => {
         //this.data;
         console.log(data);
+        this.tmphn = data.HN;
+        this.name = data.PatientName;
+        this.age = data.Age;
         //this.data = response.data;
         //this.datanotfound = data['DataNotFound'];
         //console.log(this.datanotfound);
