@@ -26,6 +26,8 @@ export class PatientComponent implements OnInit {
   name: String;
   age: String;
   tmphn: String;
+  userid: String;
+  idcard: String;
   //dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
   allUsers: any = [];
@@ -46,6 +48,7 @@ export class PatientComponent implements OnInit {
             this.profile = profile;
             this.nameline = this.profile.displayName;
             this.urlimg = this.profile.pictureUrl;
+            this.userid = this.profile.userId;
             //console.log(this.profile.userId);
           })
           .catch(console.error);
@@ -77,6 +80,7 @@ export class PatientComponent implements OnInit {
         this.tmphn = this.parsedJson[0].HN;
         this.name = this.parsedJson[0].PatientName;
         this.age = this.parsedJson[0].Age;
+        this.idcard = this.parsedJson[0].IDCard;
         //this.data = response.data;
         //this.datanotfound = data['DataNotFound'];
         //console.log(this.datanotfound);
