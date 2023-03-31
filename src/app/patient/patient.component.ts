@@ -71,9 +71,9 @@ export class PatientComponent implements OnInit {
         this.data = JSON.stringify(data['ListOfDetail']);
         this.parsedJson = JSON.parse(this.data);
         console.log(this.parsedJson);
-        this.tmphn = this.parsedJson.HN;
-        this.name = this.parsedJson.PatientName;
-        this.age = this.parsedJson.Age;
+        this.tmphn = this.parsedJson[0].HN;
+        this.name = this.parsedJson[0].PatientName;
+        this.age = this.parsedJson[0].Age;
         //this.data = response.data;
         //this.datanotfound = data['DataNotFound'];
         //console.log(this.datanotfound);
