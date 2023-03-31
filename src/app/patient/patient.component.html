@@ -1,18 +1,21 @@
 <mat-card>
   <mat-card-header>
-    <div mat-card-avatar>
-      <img
-        src="{{ urlimg }}"
-        class="rounded-circle"
-        alt="user"
-        style="width: auto; height: 100px;background-color: transparent;"
-      />
-    </div>
-    <mat-card-title>Actions Buttons</mat-card-title>
-    <mat-card-subtitle>Start</mat-card-subtitle>
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-card-title-group>
+        <img mat-card-md-image src="{{ urlimg }}" />
+        <mat-card-title>Patient Information</mat-card-title>
+        <mat-card-subtitle>ชื่อ</mat-card-subtitle>
+        <mat-card-subtitle>อายุ</mat-card-subtitle>
+        <mat-card-subtitle>HN</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-grid-list>
   </mat-card-header>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <button type="button" class="btn btn-primary btn-lg btn_login">
+      นัดหมาย
+    </button>
+    <button type="button" class="btn btn-light btn-lg btn_login">
+      ประวัติการรักษา
+    </button>
   </mat-card-actions>
 </mat-card>
