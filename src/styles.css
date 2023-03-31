@@ -1,40 +1,5 @@
-/* Global Styles */
 
-@import '~bootstrap/dist/css/bootstrap.min.css';
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-
-/* make header responsive */
-.navbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-#header_logo {
-  max-width: 30%;
-  height: auto;
-}
-
-.txt_header {
-  flex-grow: 1;
-  text-align: center;
-}
-
-/* make app-root responsive */
-.app-root {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-/* make body responsive */
 body {
-  background-image: url('https://cdn.jsdelivr.net/gh/Dev01-logic/angular-pnklineliff-devlogic@main/src/assets/img/19366.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   margin: 0;
-  padding: 0;
-  height: 100%;
 }
+
