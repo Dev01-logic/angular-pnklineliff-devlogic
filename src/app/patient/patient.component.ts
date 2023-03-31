@@ -64,12 +64,12 @@ export class PatientComponent implements OnInit {
           ContextKey: 'ReU',
         },
       })
-      .subscribe((data: any) => {
+      .subscribe((data) => {
         //this.data;
         console.log(data);
-        this.tmphn = data.HN;
-        this.name = data.PatientName;
-        this.age = data.Age;
+        this.tmphn = data['ListOfDetail'].HN;
+        this.name = data['ListOfDetail'].PatientName;
+        this.age = data['ListOfDetail'].Age;
         //this.data = response.data;
         //this.datanotfound = data['DataNotFound'];
         //console.log(this.datanotfound);
