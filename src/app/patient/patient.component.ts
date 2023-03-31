@@ -65,9 +65,9 @@ export class PatientComponent implements OnInit {
         //this.data;
         console.log(data);
         //this.data = response.data;
-        this.datanotfound = data['DataNotFound'];
+        //this.datanotfound = data['DataNotFound'];
         //console.log(this.datanotfound);
-        this.data = data['ListResultDetail'];
+        //this.data = data['ListResultDetail'];
         //console.log(this.data);
       });
   }
