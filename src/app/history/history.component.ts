@@ -39,4 +39,7 @@ export class HistoryComponent implements OnInit {
         this.subtitle = this.data.VN;
       });
   }
+  public onCardClick(evt: MouseEvent) {
+    console.log(evt);
+  }
 }
