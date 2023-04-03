@@ -1,10 +1,10 @@
 <mat-card *ngFor="let item of data">
   <mat-card-header>
     <mat-card-title-group>
-      <mat-card-title>{{ item.VisitDate | date: 'dd-MM-yyyy' }}</mat-card-title>
-      <mat-card-subtitle>VN {{ item.VN }}</mat-card-subtitle>
-      <mat-card-subtitle>แพทย์ {{ item.DoctorName }}</mat-card-subtitle>
-      <mat-card-subtitle>คลินิก {{ item.ClinicName }}</mat-card-subtitle>
+      <mat-card-title>{{ item.VisitDate | date: 'dd-MM-YYYY' }}</mat-card-title>
+      <mat-card-subtitle>VN: {{ item.VN }}</mat-card-subtitle>
+      <mat-card-subtitle>แพทย์: {{ item.DoctorName }}</mat-card-subtitle>
+      <mat-card-subtitle>คลินิก: {{ item.ClinicName }}</mat-card-subtitle>
     </mat-card-title-group>
   </mat-card-header>
 </mat-card>
