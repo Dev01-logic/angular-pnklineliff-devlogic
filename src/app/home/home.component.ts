@@ -3,7 +3,8 @@ import { Observable } from 'rxjs';
 import liff from '@line/liff';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { LineregisterService } from '../service/lineregister.service';
+//import { LineregisterService } from '../service/lineregister.service';
+import { LoaderService } from '../service/loader.service';
 
 type UnPromise<T> = T extends Promise<infer X> ? X : T;
 
@@ -18,6 +19,7 @@ export class HomeComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     //private service: LineregisterService
+    private loaderService: LoaderService
   ) {
     sessionStorage.clear();
   }
