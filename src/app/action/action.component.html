@@ -1,4 +1,5 @@
 <app-patient></app-patient>
+<br />
 <div class="text-center">
   <mat-button-toggle-group [value]="selectedState" (change)="onChange($event)">
     <mat-button-toggle [value]="toggleEnum.Option1">นัดหมาย</mat-button-toggle>
@@ -7,6 +8,5 @@
     >
   </mat-button-toggle-group>
 </div>
-<br />
 <app-appointment *ngIf="showComponentapp"></app-appointment>
 <app-history *ngIf="showComponenthis"></app-history>
