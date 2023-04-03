@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private router: Router) {}
   onlogout(event?: MouseEvent) {
     liff.logout();
-    this.router.navigate(['']);
+    this.router.navigate(['home']);
   }
 }
 
