@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 import liff from '@line/liff';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { LineregisterService } from '../service/lineregister.service';
 
 type UnPromise<T> = T extends Promise<infer X> ? X : T;
 
@@ -33,32 +34,14 @@ export class PatientComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private service: LineregisterService
   ) {}
-  os: ReturnType<typeof liff.getOS>;
-  profile: UnPromise<ReturnType<typeof liff.getProfile>>;
-  ngOnInit() {
-    liff.init({ liffId: '1660756547-zRWjKKmP' }).then(() => {
-      this.os = liff.getOS();
-      if (liff.isLoggedIn()) {
-        liff
-          .getProfile()
-          .then((profile) => {
-            this.profile = profile;
-            this.nameline = this.profile.displayName;
-            this.urlimg = this.profile.pictureUrl;
-            this.userid = this.profile.userId;
-            //console.log(this.profile.userId);
-          })
-          .catch(console.error);
-      } else {
-        liff.login();
-      }
-    });
 
-    this.route.queryParams.subscribe((param) => {
-      this.hn = param.HN;
-    });
+  ngOnInit() {
+    this.nameline = this.service.GetNameLine();
+    this.urlimg = this.service.GetPicLine();
+    this.userid = this.service.GetUserLine();
 
     let url =
       'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/EnquirePatientMaster';
@@ -66,7 +49,7 @@ export class PatientComponent implements OnInit {
       .post(url, {
         param: {
           EnglishView: false,
-          HN: this.hn,
+          HN: this.service.IsHN(),
           ContextKey: 'ReU',
         },
       })

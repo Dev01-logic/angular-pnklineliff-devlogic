@@ -17,7 +17,14 @@ export class LineregisterService {
     return sessionStorage.getItem('userLine') != null;
   }
   IsHN() {
-    return sessionStorage.getItem('hn') != null;
+    return sessionStorage.getItem('hn') != null
+      ? sessionStorage.getItem('hn')?.toString()
+      : '';
+  }
+  GetUserLine() {
+    return sessionStorage.getItem('userLine') != null
+      ? sessionStorage.getItem('userLine')?.toString()
+      : '';
   }
   GetNameLine() {
     return sessionStorage.getItem('nameLine') != null
