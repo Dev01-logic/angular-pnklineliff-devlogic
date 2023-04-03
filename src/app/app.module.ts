@@ -30,7 +30,7 @@ import { InterceptorService } from './service/loader.interceptor';
     ReactiveFormsModule,
     HttpClientModule,
     DataTablesModule,
-    RouterModule.forRoot([{ path: '', component: HomeComponent }]),
+    RouterModule.forRoot([{ path: '', component: PatientComponent }]),
     AppRoutingModule,
     //MaterialModule,
     MatProgressBarModule,
