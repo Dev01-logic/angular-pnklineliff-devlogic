@@ -39,24 +39,24 @@ export class LoginComponent implements OnInit {
               sessionStorage.setItem('nameLine', this.profile.displayName);
               sessionStorage.setItem('picLine', this.profile.pictureUrl);
               //console.log(this.profile.userId);
-              this.service
-                .GetAll({
-                  param: {
-                    ContextKey: 'ReU',
-                    LineUserID: this.profile.userId,
-                  },
-                })
-                .subscribe((res) => {
-                  this.data = res;
-                  sessionStorage.setItem('hn', this.data.HN);
-
-                  if (this.data.LineRegistered && this.data.HN != '') {
-                    this.router.navigate(['']);
-                  } else if (!this.data.LineRegistered) {
-                    this.router.navigate(['register']);
-                  } else {
-                  }
-                });
+              //this.service
+              //  .GetAll({
+              //    param: {
+              //      ContextKey: 'ReU',
+              //      LineUserID: this.profile.userId,
+              //    },
+              //  })
+              //  .subscribe((res) => {
+              //    this.data = res;
+              //    sessionStorage.setItem('hn', this.data.HN);
+              //
+              //    if (this.data.LineRegistered && this.data.HN != '') {
+              //      this.router.navigate(['']);
+              //    } else if (!this.data.LineRegistered) {
+              //      this.router.navigate(['register']);
+              //    } else {
+              //    }
+              //  });
             })
             .catch(console.error);
         } else {
