@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { Subject } from 'rxjs';
+import { LineregisterService } from '../service/lineregister.service';
 
 @Component({
   selector: 'app-appointment',
@@ -22,9 +23,10 @@ export class AppointmentComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private service: LineregisterService
   ) {}
- 
+
   ngOnInit() {
     this.route.queryParams.subscribe((param) => {
       this.hn = param.HN;
@@ -88,7 +90,7 @@ export class AppointmentComponent implements OnInit {
       .post(url, {
         param: {
           EnglishView: false,
-          HN: this.hn,
+          HN: this.service.IsHN(),
           AppointDateTimeFrom: stringstartdate,
           AppointDateTimeTo: stringenddate,
           ContextKey: 'ReU',
@@ -104,5 +106,4 @@ export class AppointmentComponent implements OnInit {
         //console.log(this.data);
       });
   }
-
 }
