@@ -12,7 +12,7 @@
       name="menu-options"
       routerLinkActive="router-link-active"
       autocomplete="off"
-      onclick="showMyComponent()"
+      onclick=""
       checked
     />
     <label for="home" class="btn btn-outline-primary">นัดหมาย</label>
@@ -27,6 +27,7 @@
     <label for="personal" class="btn btn-outline-primary"
       >ประวัติการรักษา</label
     >
+    <button (click)="showMyComponent()">Show My Component</button>
   </div>
 </div>
 <app-appointment *ngIf="showComponent"></app-appointment>
