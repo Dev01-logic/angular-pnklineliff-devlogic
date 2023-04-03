@@ -1,33 +1,14 @@
 <app-patient></app-patient>
 <div class="text-center">
-  <div
-    class="btn-group"
-    role="group"
-    aria-label="Basic checkbox toggle button group"
+  <button
+    type="button"
+    class="btn btn-primary btn-md"
+    (click)="showMyComponent()"
   >
-    <input
-      id="app"
-      value="appointment"
-      type="radio"
-      class="btn-check"
-      name="menu-options"
-      autocomplete="off"
-      (click)="showMyComponent()"
-      checked
-    />
-    <label for="home" class="btn btn-outline-primary">นัดหมาย</label>
-    <input
-      id="his"
-      value="history"
-      type="radio"
-      class="btn-check"
-      name="menu-options"
-      autocomplete="off"
-    />
-    <label for="personal" class="btn btn-outline-primary"
-      >ประวัติการรักษา</label
-    >
-    <button (click)="showMyComponent()">Show My Component</button>
-  </div>
+    นัดหมาย
+  </button>
+  <button type="button" class="btn btn-primary btn-md" (click)="">
+    นัดหมาย
+  </button>
 </div>
 <app-appointment *ngIf="showComponent"></app-appointment>
