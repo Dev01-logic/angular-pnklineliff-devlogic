@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import liff from '@line/liff';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { LoaderService } from '../service/loader.service';
+import { LineregisterService } from '../service/lineregister.service';
 
 type UnPromise<T> = T extends Promise<infer X> ? X : T;
 
@@ -13,15 +13,14 @@ type UnPromise<T> = T extends Promise<infer X> ? X : T;
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  result: Boolean;
-  result2: Boolean;
-  hn: String = '';
-  //loading: Boolean = true;
+  data: any;
   constructor(
     private http: HttpClient,
     private router: Router,
-    private loaderService: LoaderService
-  ) {}
+    private service: LineregisterService
+  ) {
+    sessionStorage.clear();
+  }
   //.init({ liffId: '1657421042-ekawW2jw' })
   os: ReturnType<typeof liff.getOS>;
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
@@ -36,29 +35,24 @@ export class HomeComponent implements OnInit {
             .getProfile()
             .then((profile) => {
               this.profile = profile;
+              sessionStorage.setItem('userLine', this.profile.userId);
+              sessionStorage.setItem('nameLine', this.profile.displayName);
+              sessionStorage.setItem('picLine', this.profile.pictureUrl);
               //console.log(this.profile.userId);
-              let url =
-                'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileEnquireLineRegister';
-              //this.loading = true; // Show the loading spinner
-              this.http
-                .post(url, {
+              this.service
+                .GetAll({
                   param: {
                     ContextKey: 'ReU',
                     LineUserID: this.profile.userId,
                   },
                 })
-                .subscribe((data: any) => {
-                  this.result = data.LineRegistered;
-                  this.hn = data.HN;
-                  //console.log(this.result);
-                  //console.log(this.hn);
-                  if (this.result && this.hn != '') {
-                    this.router.navigate(['patient'], {
-                      queryParams: {
-                        HN: this.hn,
-                      },
-                    });
-                  } else if (!this.result) {
+                .subscribe((res) => {
+                  this.data = res;
+                  sessionStorage.setItem('hn', this.data.HN);
+
+                  if (this.data.LineRegistered && this.data.HN != '') {
+                    this.router.navigate(['']);
+                  } else if (!this.data.LineRegistered) {
                     this.router.navigate(['register']);
                   } else {
                   }
@@ -75,9 +69,3 @@ export class HomeComponent implements OnInit {
     liff.login();
   }
 }
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
