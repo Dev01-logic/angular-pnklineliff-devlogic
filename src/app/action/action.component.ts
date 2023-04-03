@@ -37,11 +37,11 @@ export class ActionComponent implements OnInit {
   onChange($event) {
     console.log($event.value);
     this.selectedState = $event.value;
-    if ($event.value == 0) {
+    if ($event.value == '0') {
       console.log('test');
       this.showComponentapp = true;
       this.showComponenthis = false;
-    } else if ($event.value == 1) {
+    } else if ($event.value == '1') {
       this.showComponentapp = false;
       this.showComponenthis = true;
     } else {
