@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private service: LineregisterService
+    //private service: LineregisterService
   ) {
     sessionStorage.clear();
   }
@@ -39,8 +39,10 @@ export class HomeComponent implements OnInit {
               sessionStorage.setItem('nameLine', this.profile.displayName);
               sessionStorage.setItem('picLine', this.profile.pictureUrl);
               //console.log(this.profile.userId);
-              this.service
-                .GetAll({
+              let url =
+                'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileEnquireLineRegister';
+              this.http
+                .post(url, {
                   param: {
                     ContextKey: 'ReU',
                     LineUserID: this.profile.userId,
