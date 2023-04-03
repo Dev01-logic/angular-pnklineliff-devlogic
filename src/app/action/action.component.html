@@ -6,22 +6,24 @@
     aria-label="Basic checkbox toggle button group"
   >
     <input
-      id="home"
+      id="app"
+      value="appointment"
       type="radio"
       class="btn-check"
       name="menu-options"
       routerLinkActive="router-link-active"
       autocomplete="off"
-      onclick=""
+      (change)="changeGender($event)"
       checked
     />
     <label for="home" class="btn btn-outline-primary">นัดหมาย</label>
     <input
-      id="personal"
+      id="his"
+      value="history"
       type="radio"
       class="btn-check"
       name="menu-options"
-      onclick=""
+      (change)="changeGender($event)"
       autocomplete="off"
     />
     <label for="personal" class="btn btn-outline-primary"

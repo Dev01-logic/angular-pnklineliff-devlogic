@@ -15,4 +15,8 @@ export class ActionComponent implements OnInit {
   showMyComponent() {
     this.showComponent = true;
   }
+
+  changeGender(e) {
+    console.log(e.target.value);
+  }
 }
