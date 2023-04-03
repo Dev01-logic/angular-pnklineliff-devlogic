@@ -3,16 +3,17 @@
   <button
     type="button"
     class="btn btn-primary btn-md"
-    (click)="showMyComponent()"
+    (click)="showMyComponentapp()"
   >
     นัดหมาย
   </button>
   <button
     type="button"
     class="btn btn-primary btn-md"
-    (click)="showMyComponent()"
+    (click)="showMyComponenthis()"
   >
-    นัดหมาย
+    ประวัติการรักษา
   </button>
 </div>
-<app-appointment *ngIf="showComponent"></app-appointment>
+<app-appointment *ngIf="showComponentapp"></app-appointment>
+<app-history *ngIf="showComponenthis"></app-history>

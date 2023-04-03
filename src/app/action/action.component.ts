@@ -10,9 +10,16 @@ export class ActionComponent implements OnInit {
 
   ngOnInit() {}
 
-  showComponent = false;
+  showComponentapp = false;
+  showComponenthis = false;
 
-  showMyComponent() {
-    this.showComponent = true;
+  showMyComponentapp() {
+    this.showComponentapp = true;
+    this.showComponenthis = false;
+  }
+
+  showMyComponenthis() {
+    this.showComponentapp = false;
+    this.showComponenthis = true;
   }
 }
