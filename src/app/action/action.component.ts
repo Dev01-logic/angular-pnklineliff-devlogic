@@ -13,32 +13,16 @@ export class ActionComponent implements OnInit {
 
   ngOnInit() {}
 
-  color1 = 'light';
-  color2 = 'light';
-  showComponentapp = false;
+  showComponentapp = true;
   showComponenthis = false;
-
-  showMyComponentapp() {
-    this.color1 = 'blue';
-    this.color2 = 'light';
-    this.showComponentapp = true;
-    this.showComponenthis = false;
-  }
-
-  showMyComponenthis() {
-    this.color1 = 'light';
-    this.color2 = 'blue';
-    this.showComponentapp = false;
-    this.showComponenthis = true;
-  }
 
   toggleEnum = ToggleEnum;
   selectedState = ToggleEnum.Option1;
   onChange($event) {
-    console.log($event.value);
+    //console.log($event.value);
     this.selectedState = $event.value;
     if ($event.value == '0') {
-      console.log('test');
+      //console.log('test');
       this.showComponentapp = true;
       this.showComponenthis = false;
     } else if ($event.value == '1') {
