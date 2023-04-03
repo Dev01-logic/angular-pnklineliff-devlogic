@@ -13,6 +13,8 @@ export class ActionComponent implements OnInit {
 
   ngOnInit() {}
 
+  color1 = 'blue';
+  color2 = 'light';
   showComponentapp = false;
   showComponenthis = false;
 
@@ -31,10 +33,10 @@ export class ActionComponent implements OnInit {
   onChange($event) {
     //console.log($event.value);
     this.selectedState = $event.value;
-    if ((this.selectedState = 0)) {
+    if (($event.value = 0)) {
       this.showComponentapp = true;
       this.showComponenthis = false;
-    } else if ((this.selectedState = 1)) {
+    } else if (($event.value = 1)) {
       this.showComponentapp = false;
       this.showComponenthis = true;
     } else {
