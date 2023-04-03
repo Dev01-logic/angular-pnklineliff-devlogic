@@ -33,7 +33,7 @@ export class HistoryComponent implements OnInit {
       })
       .subscribe((res) => {
         this.data = res['ListPastVisitResultDetail'];
-        console.log(this.data);
+        console.log(res);
       });
   }
 }
