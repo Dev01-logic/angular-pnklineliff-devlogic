@@ -6,10 +6,18 @@
       alt="Hospital"
     />
     <span>โรงพยาบาลพระนั่งเกล้า</span>
+    <div class="spacer"></div>
+    <button
+      type="button"
+      class="btn btn-light btn-lg btn_logout"
+      (click)="onlogout($event)"
+    >
+      <span class="text-white"> logout</span>
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 <br />
-<div class="container">
+<div class="container" role="main">
   <router-outlet></router-outlet>
 </div>
 <!-- 
