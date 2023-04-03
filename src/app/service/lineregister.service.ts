@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, finalize, Observable } from 'rxjs';
-import { LoaderService } from '../service/loader.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +9,7 @@ export class LineregisterService {
   public isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     true
   );
-  constructor(private http: HttpClient, private loaderService: LoaderService) {}
+  constructor(private http: HttpClient) {}
   apiurl =
     'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileEnquireLineRegister';
   GetAll(parameter: any) {
