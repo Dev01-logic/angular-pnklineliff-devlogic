@@ -6,13 +6,13 @@ import { BehaviorSubject, finalize, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LineregisterService {
-  public isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+  private isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     true
   );
   constructor(private http: HttpClient) {}
   apiurl =
     'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileEnquireLineRegister';
-  GetAll(parameter: any) {
+  GetAll(parameter: any): Observable<any> {
     return this.http.post(this.apiurl, parameter);
   }
 
