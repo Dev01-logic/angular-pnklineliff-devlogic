@@ -1,1 +1,11 @@
 <p *ngFor="let item of data">{{ item.VN }}</p>
+<mat-card *ngFor="let item of data">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{ item.VisitDate | date: 'dd-mm-yy' }}</mat-card-title>
+      <mat-card-subtitle>ชื่อ {{ item.VN }}</mat-card-subtitle>
+      <mat-card-subtitle>อายุ {{ item.ClinicName }}</mat-card-subtitle>
+      <mat-card-subtitle>HN: {{ item.DoctorName }}</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-header>
+</mat-card>
