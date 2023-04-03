@@ -10,9 +10,9 @@
       type="radio"
       class="btn-check"
       name="menu-options"
-      routerLink="/appointment"
       routerLinkActive="router-link-active"
       autocomplete="off"
+      onclick="showMyComponent()"
       checked
     />
     <label for="home" class="btn btn-outline-primary">นัดหมาย</label>
@@ -21,7 +21,7 @@
       type="radio"
       class="btn-check"
       name="menu-options"
-      routerLink="history"
+      onclick=""
       autocomplete="off"
     />
     <label for="personal" class="btn btn-outline-primary"
@@ -29,3 +29,4 @@
     >
   </div>
 </div>
+<app-appointment *ngIf="showComponent"></app-appointment>

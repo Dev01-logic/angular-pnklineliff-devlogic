@@ -9,4 +9,10 @@ export class ActionComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  showComponent = false;
+
+  showMyComponent() {
+    this.showComponent = true;
+  }
 }
