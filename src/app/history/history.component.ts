@@ -17,6 +17,8 @@ export class HistoryComponent implements OnInit {
   ) {}
 
   data: any;
+  title: String;
+  subtitle: String;
 
   ngOnInit() {
     let url =

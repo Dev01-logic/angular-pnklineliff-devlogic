@@ -1,6 +1,8 @@
-<mat-card class="card" (click)="navigate()">
-  <mat-card-content>
-    <mat-card-title> {{ title }}</mat-card-title>
-    <mat-card-subtitle> {{ subtitle }} </mat-card-subtitle>
-  </mat-card-content>
-</mat-card>
+<div *ngFor="let group of data">
+  <mat-card class="card" (click)="navigate()">
+    <mat-card-content>
+      <mat-card-title> {{ group.VisitDate | date: 'dd-mm-yy' }}</mat-card-title>
+      <mat-card-subtitle> {{ group.VN }} </mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>
+</div>
