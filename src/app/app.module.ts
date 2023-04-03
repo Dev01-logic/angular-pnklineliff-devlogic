@@ -15,6 +15,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -40,6 +41,7 @@ import { InterceptorService } from './service/loader.interceptor';
   ],
   declarations: [
     AppComponent,
+    LoginComponent,
     HomeComponent,
     AppointmentComponent,
     RegisterComponent,

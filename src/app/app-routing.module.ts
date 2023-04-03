@@ -2,18 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { PatientComponent } from './patient/patient.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'appointment', component: AppointmentComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'notfound', component: NotfoundComponent },
-  { path: 'patient', component: PatientComponent },
+  //{ path: '', redirectTo: '/home', pathMatch: 'full' },
+  //{ path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'appointment',
+    component: AppointmentComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: 'notfound', component: NotfoundComponent, canActivate: [AuthGuard] },
+  { path: '', component: PatientComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
