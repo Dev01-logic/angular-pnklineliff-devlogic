@@ -29,7 +29,17 @@ export class ActionComponent implements OnInit {
   toggleEnum = ToggleEnum;
   selectedState = ToggleEnum.Option1;
   onChange($event) {
-    console.log($event.value);
+    //console.log($event.value);
     this.selectedState = $event.value;
+    if ((this.selectedState = 0)) {
+      this.showComponentapp = true;
+      this.showComponenthis = false;
+    } else if ((this.selectedState = 1)) {
+      this.showComponentapp = false;
+      this.showComponenthis = true;
+    } else {
+      this.showComponentapp = false;
+      this.showComponenthis = false;
+    }
   }
 }
