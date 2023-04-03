@@ -7,6 +7,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { PatientComponent } from './patient/patient.component';
+import { ActionComponent } from './action/action.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
   { path: 'notfound', component: NotfoundComponent, canActivate: [AuthGuard] },
-  { path: '', component: PatientComponent, canActivate: [AuthGuard] },
+  { path: '', component: ActionComponent, canActivate: [AuthGuard] },
+  { path: 'patient', component: PatientComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

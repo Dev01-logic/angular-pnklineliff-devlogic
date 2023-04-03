@@ -20,6 +20,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { PatientComponent } from './patient/patient.component';
+import { ActionComponent } from './action/action.component';
 
 import { InterceptorService } from './service/loader.interceptor';
 
@@ -30,7 +31,7 @@ import { InterceptorService } from './service/loader.interceptor';
     ReactiveFormsModule,
     HttpClientModule,
     DataTablesModule,
-    RouterModule.forRoot([{ path: '', component: PatientComponent }]),
+    RouterModule.forRoot([{ path: '', component: ActionComponent }]),
     AppRoutingModule,
     //MaterialModule,
     MatProgressBarModule,
@@ -47,6 +48,7 @@ import { InterceptorService } from './service/loader.interceptor';
     RegisterComponent,
     NotfoundComponent,
     PatientComponent,
+    ActionComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
