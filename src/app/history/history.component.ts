@@ -32,8 +32,10 @@ export class HistoryComponent implements OnInit {
         },
       })
       .subscribe((res) => {
-        this.data = res['ListPastVisitResultDetail'];
         console.log(res);
+        this.data = res['ListPastVisitResultDetail'];
+        this.title = this.data.VisitDate;
+        this.subtitle = this.data.VN;
       });
   }
 }
