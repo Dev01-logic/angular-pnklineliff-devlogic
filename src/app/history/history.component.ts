@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LineregisterService } from '../service/lineregister.service';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-history',
@@ -6,7 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./history.component.css'],
 })
 export class HistoryComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute,
+    private service: LineregisterService
+  ) {}
 
-  ngOnInit() {}
+  data: any;
+
+  ngOnInit() {
+    let url =
+      'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/EnquirePastVisit';
+    this.http
+      .post(url, {
+        param: {
+          ContextKey: 'ReU',
+          HN: this.service.IsHN(),
+          NoOfCumulative: '90',
+        },
+      })
+      .subscribe((res) => {
+        this.data = res['ListPastVisitResultDetail'];
+        console.log(this.data);
+      });
+  }
 }

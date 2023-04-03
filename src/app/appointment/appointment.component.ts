@@ -28,10 +28,6 @@ export class AppointmentComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe((param) => {
-      this.hn = param.HN;
-    });
-
     var today = new Date();
     var startday = today.getDate();
     var startmonth = today.getMonth() + 1; //January is 0!
