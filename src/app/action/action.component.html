@@ -11,9 +11,8 @@
       type="radio"
       class="btn-check"
       name="menu-options"
-      routerLinkActive="router-link-active"
       autocomplete="off"
-      (change)="changeGender($event)"
+      (click)="showMyComponent()"
       checked
     />
     <label for="home" class="btn btn-outline-primary">นัดหมาย</label>
@@ -23,7 +22,6 @@
       type="radio"
       class="btn-check"
       name="menu-options"
-      (change)="changeGender($event)"
       autocomplete="off"
     />
     <label for="personal" class="btn btn-outline-primary"
