@@ -12,6 +12,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -40,6 +41,7 @@ import { InterceptorService } from './service/loader.interceptor';
     MatToolbarModule,
     MatCardModule,
     MatGridListModule,
+    MatButtonToggleModule,
   ],
   declarations: [
     AppComponent,

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+export enum ToggleEnum {
+  Option1,
+  Option2,
+}
 @Component({
   selector: 'app-action',
   templateUrl: './action.component.html',
@@ -21,5 +24,12 @@ export class ActionComponent implements OnInit {
   showMyComponenthis() {
     this.showComponentapp = false;
     this.showComponenthis = true;
+  }
+
+  toggleEnum = ToggleEnum;
+  selectedState = ToggleEnum.Option1;
+  onChange($event) {
+    console.log($event.value);
+    this.selectedState = $event.value;
   }
 }

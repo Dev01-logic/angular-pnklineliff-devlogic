@@ -10,11 +10,19 @@
   <button
     type="button"
     class="btn btn-md"
-    style="color:red"
+    style="background-color:red"
     (click)="showMyComponenthis()"
   >
     ประวัติการรักษา
   </button>
+</div>
+<div>
+  <mat-button-toggle-group [value]="selectedState" (change)="onChange($event)">
+    <mat-button-toggle [value]="toggleEnum.Option1">นัดหมาย</mat-button-toggle>
+    <mat-button-toggle [value]="toggleEnum.Option2"
+      >ประวัติการรักษา</mat-button-toggle
+    >
+  </mat-button-toggle-group>
 </div>
 <app-appointment *ngIf="showComponentapp"></app-appointment>
 <app-history *ngIf="showComponenthis"></app-history>
