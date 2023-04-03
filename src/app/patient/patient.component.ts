@@ -70,9 +70,4 @@ export class PatientComponent implements OnInit {
         //console.log(this.data);
       });
   }
-
-  onlogout(event?: MouseEvent) {
-    liff.logout();
-    this.router.navigate(['home']);
-  }
 }
