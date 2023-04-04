@@ -79,4 +79,7 @@ export class MedicineComponent implements OnInit {
     } else {
     }
   }
+  onClick(event: any): void {
+    console.log(event.value);
+  }
 }
