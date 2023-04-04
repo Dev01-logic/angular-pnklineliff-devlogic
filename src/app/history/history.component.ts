@@ -39,6 +39,8 @@ export class HistoryComponent implements OnInit {
         this.subtitle = this.data.VN;
       });
   }
+  showComponentapp = true;
+
   public onCardClick(item: any) {
     console.log(item.VN);
     console.log(item.VisitDate);

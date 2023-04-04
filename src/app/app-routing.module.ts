@@ -9,6 +9,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { PatientComponent } from './patient/patient.component';
 import { ActionComponent } from './action/action.component';
 import { HistoryComponent } from './history/history.component';
+import { MedicineComponent } from './medicine/medicine.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'history',
     component: HistoryComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'medicine',
+    component: MedicineComponent,
     canActivate: [AuthGuard],
   },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
