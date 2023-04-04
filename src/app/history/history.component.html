@@ -2,11 +2,13 @@
   <mat-card-content>
     <mat-card-title-group>
       <mat-icon style="float: right;">keyboard_arrow_right</mat-icon>
-      <h6 class="font-weight-bold">
+      <p class="font-weight-bold">
         {{ item.VisitDate | date: 'dd-MM-YYYY' }}
-      </h6>
-      <h6>แพทย์: {{ item.DoctorName }}</h6>
-      <h6>คลินิก: {{ item.ClinicName }}</h6>
+      </p>
+      <br />
+      <p>แพทย์: {{ item.DoctorName }}</p>
+      <br />
+      <p>คลินิก: {{ item.ClinicName }}</p>
     </mat-card-title-group>
   </mat-card-content>
 </mat-card>
