@@ -1,12 +1,24 @@
 <app-patient></app-patient>
-<mat-card class="matcard" (click)="onCardClick(item)">
-  <mat-card-content>
+<mat-card class="matcard" (click)="onCardClick()">
+  <mat-card-header>
     <mat-card-title-group>
       <mat-icon style="float: right;">keyboard_arrow_left</mat-icon>
-      <mat-card-title>{{ item.VisitDate | date: 'dd-MM-YYYY' }}</mat-card-title>
-      <mat-card-subtitle>VN: {{ item.VN }}</mat-card-subtitle>
-      <mat-card-subtitle>แพทย์: {{ item.DoctorName }}</mat-card-subtitle>
-      <mat-card-subtitle>คลินิก: {{ item.ClinicName }}</mat-card-subtitle>
+      <mat-card-subtitle>
+        {{ VisitDate | date: 'dd-MM-YYYY' }}
+      </mat-card-subtitle>
+      <mat-card-subtitle>แพทย์: {{ DoctorName }}</mat-card-subtitle>
     </mat-card-title-group>
-  </mat-card-content>
+  </mat-card-header>
+</mat-card>
+<mat-card class="matcard" *ngFor="let item of data">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-icon style="float: right;">keyboard_arrow_left</mat-icon>
+      <mat-card-title> รายการยา </mat-card-title>
+      <mat-card-subtitle>
+        {{ item.StockName }}
+      </mat-card-subtitle>
+      <mat-card-subtitle>{{ item.DoseMemo }}</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-header>
 </mat-card>

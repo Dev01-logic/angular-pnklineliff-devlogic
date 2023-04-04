@@ -17,8 +17,8 @@ export class HistoryComponent implements OnInit {
   ) {}
 
   data: any;
-  title: String;
-  subtitle: String;
+  //title: String;
+  //subtitle: String;
 
   ngOnInit() {
     let url =
@@ -35,13 +35,20 @@ export class HistoryComponent implements OnInit {
         //console.log(res);
         this.data = res['ListPastVisitResultDetail'];
         //console.log(this.data);
-        this.title = this.data.VisitDate;
-        this.subtitle = this.data.VN;
+        //this.title = this.data.VisitDate;
+        //this.subtitle = this.data.VN;
       });
   }
 
   public onCardClick(item: any) {
-    console.log(item.VN);
-    console.log(item.VisitDate);
+    //console.log(item.VN);
+    //console.log(item.VisitDate);
+    this.router.navigate(['medicine'], {
+      queryParams: {
+        VisitDate: item.VisitDate,
+        VN: item.VN,
+        DoctorName: item.DoctorName,
+      },
+    });
   }
 }
