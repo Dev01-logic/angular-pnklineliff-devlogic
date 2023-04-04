@@ -12,6 +12,8 @@ export enum ToggleEnum {
 export class ActionComponent implements OnInit {
   showComponentapp = true;
   showComponenthis = false;
+  toggleEnum = ToggleEnum;
+  selectedState = ToggleEnum.Option1;
   show: String;
   constructor(private router: Router, private route: ActivatedRoute) {}
 
@@ -22,14 +24,14 @@ export class ActionComponent implements OnInit {
     if (this.show == 'his') {
       this.showComponentapp = false;
       this.showComponenthis = true;
+      this.selectedState = ToggleEnum.Option2;
     } else {
       this.showComponentapp = true;
       this.showComponenthis = false;
+      this.selectedState = ToggleEnum.Option1;
     }
   }
 
-  toggleEnum = ToggleEnum;
-  selectedState = ToggleEnum.Option1;
   onChange($event) {
     //console.log($event.value);
     this.selectedState = $event.value;
