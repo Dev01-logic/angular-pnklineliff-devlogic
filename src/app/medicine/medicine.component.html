@@ -1,9 +1,7 @@
 <app-patient></app-patient>
 <div class="text-center" style="margin-bottom:5px;margin-top:5px;">
   <mat-button-toggle-group [value]="selectedState" (change)="onChange($event)">
-    <mat-button-toggle [value]="toggleEnum.Option1" (click)="onClick($event)"
-      >นัดหมาย</mat-button-toggle
-    >
+    <mat-button-toggle [value]="toggleEnum.Option1">นัดหมาย</mat-button-toggle>
     <mat-button-toggle [value]="toggleEnum.Option2" (click)="onClick($event)"
       >ประวัติการรักษา</mat-button-toggle
     >

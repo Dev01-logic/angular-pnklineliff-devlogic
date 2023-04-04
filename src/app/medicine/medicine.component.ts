@@ -80,6 +80,11 @@ export class MedicineComponent implements OnInit {
     }
   }
   onClick(event: any): void {
-    console.log(event.value);
+    //console.log(event.value);
+    this.router.navigate([''], {
+      queryParams: {
+        show: 'his',
+      },
+    });
   }
 }
