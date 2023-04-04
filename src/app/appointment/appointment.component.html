@@ -1,22 +1,15 @@
-<!-- As a link -->
-<div class="card">
-  <div class="card-body">
-    <!-- Nested Row within Card Body -->
-
-    <div class="row justify-content-md-center" *ngIf="!datanotfound">
-      <mat-card class="matcard" *ngFor="let group of data">
-        <mat-card-content>
-          <mat-card-subtitle> HN: {{ group.HN }} </mat-card-subtitle>
-          <mat-card-subtitle>ชื่อ-สกุล {{ group.Age }}</mat-card-subtitle>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <!---->
-    <div class="col-xs-6 col-sm-12 text-center" *ngIf="datanotfound">
-      <h5 class="font-weight-bold text-dark text-center">
-        <span class="font-weight-bold">ไม่พบข้อมูลนัดหมายของคุณ</span><br />
-      </h5>
-    </div>
-    <!---->
-  </div>
+<div class="row justify-content-md-center" *ngIf="!datanotfound">
+  <mat-card class="matcard" *ngFor="let group of data">
+    <mat-card-content>
+      <mat-card-subtitle> HN: {{ group.HN }} </mat-card-subtitle>
+      <mat-card-subtitle>ชื่อ-สกุล {{ group.Age }}</mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>
 </div>
+<!---->
+<div class="col-xs-6 col-sm-12 text-center" *ngIf="datanotfound">
+  <h5 class="font-weight-bold text-dark text-center">
+    <span class="font-weight-bold">ไม่พบข้อมูลนัดหมายของคุณ</span><br />
+  </h5>
+</div>
+<!---->
