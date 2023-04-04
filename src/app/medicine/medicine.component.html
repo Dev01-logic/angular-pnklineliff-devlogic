@@ -10,10 +10,8 @@
     </mat-card-title-group>
   </mat-card-header>
 </mat-card>
-<mat-card class="matcard">
-  <mat-card-header>
-    <mat-card-title> รายการยา </mat-card-title>
-  </mat-card-header>
+<div><h3>รายการยา</h3></div>
+<mat-card class="matcard2">
   <mat-card-content *ngFor="let item of data">
     <mat-card-title>
       {{ item.StockName }}
