@@ -1,4 +1,4 @@
-<div class="row justify-content-md-center" *ngIf="!datanotfound">
+<div *ngIf="!datanotfound">
   <mat-card class="matcard" *ngFor="let group of data">
     <mat-card-content>
       <mat-card-subtitle> รายละเอียดนัดหมาย </mat-card-subtitle>
@@ -17,9 +17,9 @@
   </mat-card>
 </div>
 <!---->
-<div class="col-xs-6 col-sm-12 text-center" *ngIf="datanotfound">
-  <h5 class="font-weight-bold text-dark text-center">
-    <span class="font-weight-bold">ไม่พบข้อมูลนัดหมายของคุณ</span><br />
-  </h5>
+<div *ngIf="datanotfound">
+  <h1 class="font-weight-bold text-dark text-center">
+    <span class="font-weight-bold">ไม่พบข้อมูลนัดหมายของคุณ</span>
+  </h1>
 </div>
 <!---->
