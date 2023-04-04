@@ -60,7 +60,7 @@ export class MedicineComponent implements OnInit {
   }
 
   toggleEnum = ToggleEnum;
-  selectedState = ToggleEnum.Option1;
+  selectedState = ToggleEnum.Option2;
   onChange($event) {
     //console.log($event.value);
     this.selectedState = $event.value;
