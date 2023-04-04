@@ -79,7 +79,7 @@ export class MedicineComponent implements OnInit {
     } else {
     }
   }
-  onClick(event: any): void {
+  public onClick(event: any): void {
     //console.log(event.value);
     this.router.navigate([''], {
       queryParams: {
