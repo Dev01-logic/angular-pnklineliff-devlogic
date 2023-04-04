@@ -4,40 +4,18 @@
     <!-- Nested Row within Card Body -->
 
     <div class="row justify-content-md-center" *ngIf="!datanotfound">
-      <div *ngFor="let group of data">
-        <div class="col-xs-6 col-sm-12 text-center">
-          <div class="card mb-4" style="border-radius: 50px;">
-            <div class="card-header" style="border-radius: 50px;">
-              <!--  <span class="font-weight-bold text-dark">วันเวลานัดหมาย</span>-->
-              <span class="font-weight-bold">{{
-                group.AppointDateTimeFromShow.substring(6)
-              }}</span
-              ><span class="font-weight-bold text-dark">
-                {{ group.AppointDateTimeFrom | date: 'HH:mm' }} น.
-              </span>
-            </div>
-            <h6 class="font-weight-bold text-dark text-center">
-              <span class="font-weight-bold"
-                >แพทย์ : {{ group.DoctorLocalName }}</span
-              >
-              <br /><span class="font-weight-bold"
-                >คลินิก : {{ group.ClinicLocalName }}</span
-              >
-            </h6>
-          </div>
-        </div>
-      </div>
+      <mat-card class="matcard" *ngFor="let group of data">
+        <mat-card-content>
+          <mat-card-subtitle> HN: {{ group.HN }} </mat-card-subtitle>
+          <mat-card-subtitle>ชื่อ-สกุล {{ group.Age }}</mat-card-subtitle>
+        </mat-card-content>
+      </mat-card>
     </div>
     <!---->
     <div class="col-xs-6 col-sm-12 text-center" *ngIf="datanotfound">
-      <div class="card mb-4" style="border-radius: 50px;">
-        <div class="card-header" style="border-radius: 50px;">
-          <br />
-          <h6 class="font-weight-bold text-dark text-center">
-            <span class="font-weight-bold">ไม่พบตารางนัดหมาย</span><br />
-          </h6>
-        </div>
-      </div>
+      <h5 class="font-weight-bold text-dark text-center">
+        <span class="font-weight-bold">ไม่พบข้อมูลนัดหมายของคุณ</span><br />
+      </h5>
     </div>
     <!---->
   </div>
