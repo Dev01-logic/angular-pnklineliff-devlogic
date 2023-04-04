@@ -1,14 +1,12 @@
 <mat-card class="matcard" *ngFor="let item of data" (click)="onCardClick(item)">
-  <mat-card-content>
+  <mat-card-header>
     <mat-card-title-group>
       <mat-icon style="float: right;">keyboard_arrow_right</mat-icon>
-      <p class="font-weight-bold">
+      <mat-card-subtitle class="font-weight-bold">
         {{ item.VisitDate | date: 'dd-MM-YYYY' }}
-      </p>
-      <br />
-      <p>แพทย์: {{ item.DoctorName }}</p>
-      <br />
-      <p>คลินิก: {{ item.ClinicName }}</p>
+      </mat-card-subtitle>
+      <mat-card-subtitle>แพทย์: {{ item.DoctorName }}</mat-card-subtitle>
+      <mat-card-subtitle>คลินิก: {{ item.ClinicName }}</mat-card-subtitle>
     </mat-card-title-group>
-  </mat-card-content>
+  </mat-card-header>
 </mat-card>
