@@ -13,6 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -42,6 +43,7 @@ import { InterceptorService } from './service/loader.interceptor';
     MatCardModule,
     MatGridListModule,
     MatButtonToggleModule,
+    MatIconModule,
   ],
   declarations: [
     AppComponent,
