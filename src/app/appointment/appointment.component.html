@@ -1,9 +1,19 @@
 <div class="row justify-content-md-center" *ngIf="!datanotfound">
   <mat-card class="matcard" *ngFor="let group of data">
     <mat-card-content>
-      <mat-card-subtitle> HN: {{ group.HN }} </mat-card-subtitle>
-      <mat-card-subtitle>ชื่อ-สกุล {{ group.Age }}</mat-card-subtitle>
+      <mat-card-subtitle> รายละเอียดนัดหมาย </mat-card-subtitle>
+      <mat-card-subtitle
+        >วันที่นัด: {{ group.AppointDateTimeFromShow }}</mat-card-subtitle
+      >
+      <mat-card-subtitle>คลินิก {{ group.ClinicLocalName }}</mat-card-subtitle>
+      <mat-card-subtitle>แพทย์ {{ group.DoctorLocalName }}</mat-card-subtitle>
     </mat-card-content>
+    <mat-card-footer
+      ><p style="font-size:10px;text-align: center;">
+        หากมีนัดเจาะเลือดหรือเอกซเรย์ กรุณายื่นคิวก่อนเวลานัดหมายอย่างน้อย 1
+        ชั่วโมง
+      </p></mat-card-footer
+    >
   </mat-card>
 </div>
 <!---->
