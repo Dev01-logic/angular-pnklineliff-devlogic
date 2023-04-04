@@ -1,4 +1,4 @@
-<mat-card *ngFor="let item of data" (click)="onCardClick(item)">
+<mat-card class="matcard" *ngFor="let item of data" (click)="onCardClick(item)">
   <mat-card-header>
     <mat-card-title-group>
       <mat-card-title>{{ item.VisitDate | date: 'dd-MM-YYYY' }}</mat-card-title>
