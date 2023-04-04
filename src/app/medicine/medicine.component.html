@@ -11,11 +11,11 @@
   <mat-card-header>
     <mat-card-title-group>
       <mat-card-subtitle
-        ><mat-icon>keyboard_arrow_left</mat-icon></mat-card-subtitle
+        ><mat-icon>keyboard_arrow_left</mat-icon>
+        <p style="padding-left: 100px;">
+          {{ visitdate | date: 'dd-MM-YYYY' }}
+        </p></mat-card-subtitle
       >
-      <mat-card-subtitle style="margin-left:20px;">{{
-        visitdate | date: 'dd-MM-YYYY'
-      }}</mat-card-subtitle>
       <mat-card-subtitle>แพทย์: {{ doctor }} </mat-card-subtitle>
       <mat-card-subtitle><br /></mat-card-subtitle>
     </mat-card-title-group>
