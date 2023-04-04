@@ -8,6 +8,8 @@
   width: 200px;
   background-color: rgb(14, 200, 99);
   border-radius: 50px;
+  position:relative;
+margin-top:100%;
 }
 .loader-container {
   position: absolute;
