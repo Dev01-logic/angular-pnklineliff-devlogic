@@ -10,7 +10,10 @@
 <mat-card class="matcard" (click)="onCardClick()">
   <mat-card-header>
     <mat-card-title-group>
-      <mat-card-subtitle>
+      <mat-card-subtitle
+        ><span
+          ><mat-icon style="float: left;">keyboard_arrow_left</mat-icon></span
+        >
         {{ visitdate | date: 'dd-MM-YYYY' }}
       </mat-card-subtitle>
       <mat-card-subtitle>แพทย์: {{ doctor }}</mat-card-subtitle>
@@ -19,7 +22,6 @@
           >keyboard_arrow_left</mat-icon
         ></mat-card-subtitle
       >
-      <mat-card-subtitle><br /></mat-card-subtitle>
     </mat-card-title-group>
   </mat-card-header>
 </mat-card>
