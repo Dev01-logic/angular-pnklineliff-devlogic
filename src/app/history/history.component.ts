@@ -32,14 +32,13 @@ export class HistoryComponent implements OnInit {
         },
       })
       .subscribe((res) => {
-        console.log(res);
+        //console.log(res);
         this.data = res['ListPastVisitResultDetail'];
-        console.log(this.data);
+        //console.log(this.data);
         this.title = this.data.VisitDate;
         this.subtitle = this.data.VN;
       });
   }
-  showComponentapp = false;
 
   public onCardClick(item: any) {
     console.log(item.VN);

@@ -1,5 +1,5 @@
 <mat-card class="matcard" *ngFor="let item of data" (click)="onCardClick(item)">
-  <mat-card-header>
+  <mat-card-content>
     <mat-card-title-group>
       <mat-icon style="float: right;">keyboard_arrow_right</mat-icon>
       <mat-card-title>{{ item.VisitDate | date: 'dd-MM-YYYY' }}</mat-card-title>
@@ -7,5 +7,5 @@
       <mat-card-subtitle>แพทย์: {{ item.DoctorName }}</mat-card-subtitle>
       <mat-card-subtitle>คลินิก: {{ item.ClinicName }}</mat-card-subtitle>
     </mat-card-title-group>
-  </mat-card-header>
+  </mat-card-content>
 </mat-card>
