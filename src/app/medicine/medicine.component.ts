@@ -48,6 +48,10 @@ export class MedicineComponent implements OnInit {
   }
   //this.router.navigate(['register']);
   public onCardClick() {
-    this.router.navigate(['']);
+    this.router.navigate(['action'], {
+      queryParams: {
+        show: 'his',
+      },
+    });
   }
 }

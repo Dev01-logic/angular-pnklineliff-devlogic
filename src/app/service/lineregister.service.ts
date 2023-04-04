@@ -14,7 +14,7 @@ export class LineregisterService {
   //}
 
   IsloggedIn() {
-    return sessionStorage.getItem('userLine') != null;
+    return sessionStorage.getItem('hn') != null;
   }
   IsHN() {
     return sessionStorage.getItem('hn') != null

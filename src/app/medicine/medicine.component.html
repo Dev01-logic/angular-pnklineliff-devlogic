@@ -13,7 +13,7 @@
 <div><h3>รายการยา</h3></div>
 <mat-card class="matcard2">
   <mat-card-content *ngFor="let item of data; let i = index">
-    <mat-card-title> {{ i + 1 }} {{ item.StockName }} </mat-card-title>
+    <mat-card-title> {{ i + 1 }}. {{ item.StockName }} </mat-card-title>
     <mat-card-subtitle>{{ item.DoseMemo }}</mat-card-subtitle>
   </mat-card-content>
 </mat-card>
