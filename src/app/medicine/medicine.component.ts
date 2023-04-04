@@ -2,6 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LineregisterService } from '../service/lineregister.service';
+export enum ToggleEnum {
+  Option1,
+  Option2,
+}
 
 @Component({
   selector: 'app-medicine',
@@ -53,5 +57,26 @@ export class MedicineComponent implements OnInit {
         show: 'his',
       },
     });
+  }
+
+  toggleEnum = ToggleEnum;
+  selectedState = ToggleEnum.Option1;
+  onChange($event) {
+    //console.log($event.value);
+    this.selectedState = $event.value;
+    if ($event.value == '0') {
+      this.router.navigate([''], {
+        queryParams: {
+          show: 'app',
+        },
+      });
+    } else if ($event.value == '1') {
+      this.router.navigate([''], {
+        queryParams: {
+          show: 'his',
+        },
+      });
+    } else {
+    }
   }
 }
