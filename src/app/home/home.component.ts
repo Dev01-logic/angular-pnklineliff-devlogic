@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
         //} else {
         liff.login();
         //}
-        //if (liff.isLoggedIn()) {
+        if (liff.isLoggedIn()) {
         liff
           .getProfile()
           .then((profile) => {
@@ -72,9 +72,9 @@ export class HomeComponent implements OnInit {
               });
           })
           .catch(console.error);
-        //} else {
-        //  liff.login();
-        //}
+        } else {
+          liff.login();
+        }
       })
       .catch(console.error);
   }
