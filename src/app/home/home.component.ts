@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     //private service: LineregisterService
     private loaderService: LoaderService
   ) {
-    sessionStorage.clear();
+    //sessionStorage.clear();
   }
   //.init({ liffId: '1657421042-ekawW2jw' })
   os: ReturnType<typeof liff.getOS>;
@@ -29,53 +29,53 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     //console.log('test');
     //liff.login();
-  }
-
-  onClick(event?: MouseEvent) {
-    //liff.login();
     liff
       .init({ liffId: '1660756547-zRWjKKmP' })
       .then(() => {
         this.os = liff.getOS();
         //if (liff.isLoggedIn()) {
         //} else {
-        liff.login();
+        //  liff.login();
         //}
         if (liff.isLoggedIn()) {
-        liff
-          .getProfile()
-          .then((profile) => {
-            this.profile = profile;
-            sessionStorage.setItem('userLine', this.profile.userId);
-            sessionStorage.setItem('nameLine', this.profile.displayName);
-            sessionStorage.setItem('picLine', this.profile.pictureUrl);
-            //console.log(this.profile.userId);
-            let url =
-              'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileEnquireLineRegister';
-            this.http
-              .post(url, {
-                param: {
-                  ContextKey: 'ReU',
-                  LineUserID: this.profile.userId,
-                },
-              })
-              .subscribe((res) => {
-                this.data = res;
-                sessionStorage.setItem('hn', this.data.HN);
+          liff
+            .getProfile()
+            .then((profile) => {
+              this.profile = profile;
+              sessionStorage.setItem('userLine', this.profile.userId);
+              sessionStorage.setItem('nameLine', this.profile.displayName);
+              sessionStorage.setItem('picLine', this.profile.pictureUrl);
+              //console.log(this.profile.userId);
+              let url =
+                'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileEnquireLineRegister';
+              this.http
+                .post(url, {
+                  param: {
+                    ContextKey: 'ReU',
+                    LineUserID: this.profile.userId,
+                  },
+                })
+                .subscribe((res) => {
+                  this.data = res;
+                  sessionStorage.setItem('hn', this.data.HN);
 
-                if (this.data.LineRegistered && this.data.HN != '') {
-                  this.router.navigate(['']);
-                } else if (!this.data.LineRegistered) {
-                  this.router.navigate(['register']);
-                } else {
-                }
-              });
-          })
-          .catch(console.error);
+                  if (this.data.LineRegistered && this.data.HN != '') {
+                    this.router.navigate(['']);
+                  } else if (!this.data.LineRegistered) {
+                    this.router.navigate(['register']);
+                  } else {
+                  }
+                });
+            })
+            .catch(console.error);
         } else {
           liff.login();
         }
       })
       .catch(console.error);
+  }
+
+  onClick(event?: MouseEvent) {
+    liff.login();
   }
 }
