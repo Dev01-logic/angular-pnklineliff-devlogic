@@ -29,14 +29,18 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     //console.log('test');
     //liff.login();
+  }
+
+  onClick(event?: MouseEvent) {
+    liff.login();
     liff
       .init({ liffId: '1660756547-zRWjKKmP' })
       .then(() => {
         this.os = liff.getOS();
-        if (liff.isLoggedIn()) {
-        } else {
-          liff.login();
-        }
+        //if (liff.isLoggedIn()) {
+        //} else {
+        //  liff.login();
+        //}
         //if (liff.isLoggedIn()) {
         liff
           .getProfile()
@@ -73,9 +77,5 @@ export class HomeComponent implements OnInit {
         //}
       })
       .catch(console.error);
-  }
-
-  onClick(event?: MouseEvent) {
-    liff.login();
   }
 }
