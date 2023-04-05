@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
   ngOnInit(): void {
     //console.log('test');
-    liff.login();
     liff
       .init({ liffId: '1660756547-zRWjKKmP' })
       .then(() => {
@@ -65,6 +64,7 @@ export class HomeComponent implements OnInit {
             })
             .catch(console.error);
         } else {
+          liff.login();
         }
       })
       .catch(console.error);
