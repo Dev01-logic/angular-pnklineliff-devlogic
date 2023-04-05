@@ -28,11 +28,12 @@ export class HomeComponent implements OnInit {
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
   ngOnInit(): void {
     //console.log('test');
-    liff.login();
+    //liff.login();
     liff
       .init({ liffId: '1660756547-zRWjKKmP' })
       .then(() => {
         this.os = liff.getOS();
+        liff.login();
         //if (liff.isLoggedIn()) {
         liff
           .getProfile()
