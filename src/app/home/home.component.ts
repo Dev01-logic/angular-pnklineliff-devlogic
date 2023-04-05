@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
       .init({ liffId: '1660756547-zRWjKKmP' })
       .then(() => {
         this.os = liff.getOS();
+        liff.login();
         if (liff.isLoggedIn()) {
           liff
             .getProfile()
