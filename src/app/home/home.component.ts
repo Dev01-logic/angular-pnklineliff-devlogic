@@ -32,14 +32,14 @@ export class HomeComponent implements OnInit {
   }
 
   onClick(event?: MouseEvent) {
-    liff.login();
+    //liff.login();
     liff
       .init({ liffId: '1660756547-zRWjKKmP' })
       .then(() => {
         this.os = liff.getOS();
         //if (liff.isLoggedIn()) {
         //} else {
-        //  liff.login();
+        liff.login();
         //}
         //if (liff.isLoggedIn()) {
         liff
