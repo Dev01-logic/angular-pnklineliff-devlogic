@@ -32,10 +32,6 @@ export class NotfoundComponent implements OnInit {
     });
   }
 
-  onTest2(event?: MouseEvent) {
-    this.router.navigate(['home']);
-  }
-
   onlogout(event?: MouseEvent) {
     liff.logout();
     this.router.navigate(['home']);

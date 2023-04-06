@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
             this.profile = profile;
             this.nameline = this.profile.displayName;
             this.urlimg = this.profile.pictureUrl;
-            console.log(this.profile.userId);
+            //console.log(this.profile.userId);
           })
           .catch(console.error);
       } else {
@@ -52,11 +52,8 @@ export class RegisterComponent implements OnInit {
     tel: new FormControl('', Validators.required),
   });
 
-  onTest(event?: MouseEvent) {
-    this.router.navigate(['home']);
-  }
   onSubmit(event?: MouseEvent) {
-    console.log(this.userprofileForm.value);
+    //console.log(this.userprofileForm.value);
     let url =
       'https://app1.pranangklao.go.th/DevLineAPI/ProductRESTService.svc/MobileUpdateLineRegister';
     this.http
@@ -73,11 +70,7 @@ export class RegisterComponent implements OnInit {
         // console.log(data);
         this.hn = data.HN;
         if (this.hn != '') {
-          this.router.navigate(['appointment'], {
-            queryParams: {
-              HN: this.hn,
-            },
-          });
+          this.router.navigate(['']);
           //alert('TEST');
         } else {
           this.router.navigate(['notfound']);
