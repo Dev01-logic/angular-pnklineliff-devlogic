@@ -4,6 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Validators } from '@angular/forms';
 import liff from '@line/liff';
+import { LineregisterService } from '../service/lineregister.service';
 
 type UnPromise<T> = T extends Promise<infer X> ? X : T;
 
@@ -15,6 +16,7 @@ type UnPromise<T> = T extends Promise<infer X> ? X : T;
 export class RegisterComponent implements OnInit {
   nameline: String;
   urlimg: String;
+  userid: String;
 
   //Chcek numberOnly
   numberOnly(event): boolean {
@@ -24,26 +26,17 @@ export class RegisterComponent implements OnInit {
     }
     return true;
   }
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private service: LineregisterService
+  ) {}
   os: ReturnType<typeof liff.getOS>;
   profile: UnPromise<ReturnType<typeof liff.getProfile>>;
   ngOnInit() {
-    liff.init({ liffId: '1660756547-zRWjKKmP' }).then(() => {
-      this.os = liff.getOS();
-      if (liff.isLoggedIn()) {
-        liff
-          .getProfile()
-          .then((profile) => {
-            this.profile = profile;
-            this.nameline = this.profile.displayName;
-            this.urlimg = this.profile.pictureUrl;
-            //console.log(this.profile.userId);
-          })
-          .catch(console.error);
-      } else {
-        liff.login();
-      }
-    });
+    this.nameline = this.service.GetNameLine();
+    this.urlimg = this.service.GetPicLine();
+    this.userid = this.service.GetUserLine();
   }
 
   hn: String;
@@ -60,7 +53,7 @@ export class RegisterComponent implements OnInit {
       .post(url, {
         param: {
           ContextKey: 'ReU',
-          LineUserID: this.profile.userId,
+          LineUserID: this.userid,
           IDCard: this.userprofileForm.controls['pid'].value,
           TelephoneNo: this.userprofileForm.controls['tel'].value,
         },
@@ -68,7 +61,7 @@ export class RegisterComponent implements OnInit {
       .toPromise()
       .then((data: any) => {
         // console.log(data);
-        //this.hn = data.HN;
+        this.hn = data.HN;
         if (this.hn != '') {
           sessionStorage.setItem('hn', data.HN);
           this.router.navigate(['']);
