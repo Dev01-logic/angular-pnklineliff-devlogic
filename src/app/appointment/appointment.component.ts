@@ -13,7 +13,7 @@ import { LoaderService } from '../service/loader.service';
 })
 export class AppointmentComponent implements OnInit {
   data: any;
-  datanotfound: Boolean = true;
+  datanotfound: Boolean = false;
   post: any;
   nameline: String;
   urlimg: String;
@@ -96,7 +96,7 @@ export class AppointmentComponent implements OnInit {
       })
       .subscribe((data) => {
         //this.data;
-        console.log(data);
+        //console.log(data);
         //this.data = response.data;
         this.datanotfound = data['DataNotFound'];
         //console.log(this.datanotfound);
