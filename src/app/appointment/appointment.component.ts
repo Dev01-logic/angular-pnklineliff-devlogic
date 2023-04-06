@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import { LineregisterService } from '../service/lineregister.service';
+import { LoaderService } from '../service/loader.service';
 
 @Component({
   selector: 'app-appointment',
@@ -24,7 +25,8 @@ export class AppointmentComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private route: ActivatedRoute,
-    private service: LineregisterService
+    private service: LineregisterService,
+    private loaderService: LoaderService
   ) {}
 
   ngOnInit() {
