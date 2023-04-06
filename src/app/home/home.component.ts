@@ -57,9 +57,9 @@ export class HomeComponent implements OnInit {
                 })
                 .subscribe((res) => {
                   this.data = res;
-                  sessionStorage.setItem('hn', this.data.HN);
 
                   if (this.data.LineRegistered && this.data.HN != '') {
+                    sessionStorage.setItem('hn', this.data.HN);
                     this.router.navigate(['']);
                   } else if (!this.data.LineRegistered) {
                     this.router.navigate(['register']);

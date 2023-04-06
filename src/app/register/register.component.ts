@@ -68,8 +68,9 @@ export class RegisterComponent implements OnInit {
       .toPromise()
       .then((data: any) => {
         // console.log(data);
-        this.hn = data.HN;
+        //this.hn = data.HN;
         if (this.hn != '') {
+          sessionStorage.setItem('hn', data.HN);
           this.router.navigate(['']);
           //alert('TEST');
         } else {
