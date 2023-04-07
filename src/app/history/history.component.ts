@@ -51,4 +51,8 @@ export class HistoryComponent implements OnInit {
       },
     });
   }
+
+  filterItemsOfVisitDate(VisitDate) {
+    return this.data.filter((x) => x.data.VisitDate != VisitDate);
+  }
 }

@@ -1,20 +1,18 @@
 <div *ngFor="let item of data">
-  <mat-card
-    class="matcard"
-    *ngFor="let item of filterItemsOfType({{item.VisitDate}})"
-    (click)="onCardClick(item)"
-  >
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-subtitle>
-          {{ item.VisitDate | thaidate }}
-        </mat-card-subtitle>
-        <mat-card-subtitle>แพทย์: {{ item.DoctorName }}</mat-card-subtitle>
-        <mat-card-subtitle>คลินิก: {{ item.ClinicName }}</mat-card-subtitle>
-      </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-actions>
-      <button mat-button class="arrow-button">></button>
-    </mat-card-actions>
-  </mat-card>
+  <ng-container *ngFor="let item of filterItemsOfVisitDate(item.VisitDate)">
+    <mat-card class="matcard" (click)="onCardClick(item)">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-subtitle>
+            {{ item.VisitDate | thaidate }}
+          </mat-card-subtitle>
+          <mat-card-subtitle>แพทย์: {{ item.DoctorName }}</mat-card-subtitle>
+          <mat-card-subtitle>คลินิก: {{ item.ClinicName }}</mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-button class="arrow-button">></button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
 </div>
