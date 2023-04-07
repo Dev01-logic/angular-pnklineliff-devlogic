@@ -31,7 +31,7 @@ const routes: Routes = [
     component: MedicineComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: 'register', component: RegisterComponent },
   { path: 'notfound', component: NotfoundComponent, canActivate: [AuthGuard] },
   { path: '', component: ActionComponent, canActivate: [AuthGuard] },
   { path: 'patient', component: PatientComponent, canActivate: [AuthGuard] },
