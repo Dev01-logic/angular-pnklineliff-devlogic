@@ -17,7 +17,7 @@ export class HistoryComponent implements OnInit {
   ) {}
 
   data: any;
-  groupedData = {};
+  newJson: any;
   //title: String;
   //subtitle: String;
 
@@ -38,11 +38,12 @@ export class HistoryComponent implements OnInit {
         //console.log(this.data);
         //this.title = this.data.VisitDate;
         //this.subtitle = this.data.VN;
+        let groupedData = {};
         for (let i = 0; i < this.data.length; i++) {
           let item = this.data[i];
           let key = item.VN + item.VisitDate;
-          if (!this.groupedData[key]) {
-            this.groupedData[key] = {
+          if (!groupedData[key]) {
+            groupedData[key] = {
               PrescriptionNo: [],
               VN: item.VN,
               VisitDate: item.VisitDate,
@@ -50,11 +51,13 @@ export class HistoryComponent implements OnInit {
               ClinicName: [],
             };
           }
-          this.groupedData[key].PrescriptionNo.push(item.PrescriptionNo);
-          this.groupedData[key].DoctorName.push(item.DoctorName);
-          this.groupedData[key].ClinicName.push(item.ClinicName);
+          groupedData[key].PrescriptionNo.push(item.PrescriptionNo);
+          groupedData[key].DoctorName.push(item.DoctorName);
+          groupedData[key].ClinicName.push(item.ClinicName);
+          this.newJson = Object.keys(groupedData).map((key) => groupedData[key]);
         }
-        console.log(this.groupedData);
+        
+        console.log(this.newJson);
       });
   }
 
