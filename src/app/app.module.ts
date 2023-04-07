@@ -26,6 +26,8 @@ import { ActionComponent } from './action/action.component';
 import { HistoryComponent } from './history/history.component';
 import { MedicineComponent } from './medicine/medicine.component';
 
+import { ThaiDatePipe } from './thaidate.pipe';
+
 import { InterceptorService } from './service/loader.interceptor';
 
 @NgModule({
@@ -57,6 +59,7 @@ import { InterceptorService } from './service/loader.interceptor';
     ActionComponent,
     HistoryComponent,
     MedicineComponent,
+    ThaiDatePipe,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
