@@ -1,7 +1,6 @@
 <mat-card class="matcard" *ngFor="let item of data" (click)="onCardClick(item)">
   <mat-card-header>
     <mat-card-title-group>
-      <mat-icon style="float: right;">keyboard_arrow_right</mat-icon>
       <mat-card-subtitle>
         {{ item.VisitDate | date: 'dd-MM-YYYY' }}
       </mat-card-subtitle>
