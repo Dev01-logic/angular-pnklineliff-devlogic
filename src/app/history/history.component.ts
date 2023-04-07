@@ -50,7 +50,7 @@ export class HistoryComponent implements OnInit {
               ClinicName: [],
             };
           }
-          this.groupedData[key].PrescriptionNo.push(item.PrescriptionNo);
+          this.groupedData[key].PrescriptionNo.push(item.PrescriptionNo,item.DoctorName,item.ClinicName);
         }
         console.log(this.groupedData);
       });
