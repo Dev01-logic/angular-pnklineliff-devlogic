@@ -41,7 +41,7 @@ export class HistoryComponent implements OnInit {
         for (let i = 0; i < this.data.length; i++) {
           let item = this.data[i];
           let key = item.VN + item.VisitDate;
-          if (!this.groupedData[key]) {
+          if (!this.groupedData['ListPastVisitResultDetail2']) {
             this.groupedData['ListPastVisitResultDetail2'] = {
               PrescriptionNo: [],
               VN: item.VN,
