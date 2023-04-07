@@ -42,7 +42,7 @@ export class HistoryComponent implements OnInit {
           let item = this.data[i];
           let key = item.VN + item.VisitDate;
           if (!this.groupedData[key]) {
-            this.groupedData[key] = {
+            this.groupedData['ListPastVisitResultDetail2'] = {
               PrescriptionNo: [],
               VN: item.VN,
               VisitDate: item.VisitDate,
@@ -50,7 +50,9 @@ export class HistoryComponent implements OnInit {
               ClinicName: [],
             };
           }
-          this.groupedData[key].PrescriptionNo.push(item.PrescriptionNo,item.DoctorName,item.ClinicName);
+          this.groupedData['ListPastVisitResultDetail2'].PrescriptionNo.push(item.PrescriptionNo);
+          this.groupedData['ListPastVisitResultDetail2'].DoctorName.push(item.DoctorName);
+          this.groupedData['ListPastVisitResultDetail2'].ClinicName.push(item.ClinicName);
         }
         console.log(this.groupedData);
       });
