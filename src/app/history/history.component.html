@@ -2,7 +2,7 @@
   <mat-card-header>
     <mat-card-title-group>
       <mat-card-subtitle>
-        {{ item.VisitDate | date: 'dd-MM-YYYY' }}
+        {{ item.VisitDate | thaidate }}
       </mat-card-subtitle>
       <mat-card-subtitle>แพทย์: {{ item.DoctorName }}</mat-card-subtitle>
       <mat-card-subtitle>คลินิก: {{ item.ClinicName }}</mat-card-subtitle>
