@@ -30,7 +30,7 @@ export class HistoryComponent implements OnInit {
           ContextKey: 'ReU',
           HN: this.service.IsHN(),
           NoOfCumulative: '90',
-          EnglishView: 'false'
+          EnglishView: false
         },
       })
       .subscribe((res) => {
