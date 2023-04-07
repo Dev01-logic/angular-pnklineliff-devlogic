@@ -30,6 +30,7 @@ export class HistoryComponent implements OnInit {
           ContextKey: 'ReU',
           HN: this.service.IsHN(),
           NoOfCumulative: '90',
+          EnglishView: 'false'
         },
       })
       .subscribe((res) => {
@@ -57,7 +58,7 @@ export class HistoryComponent implements OnInit {
           this.newJson = Object.keys(groupedData).map((key) => groupedData[key]);
         }
         
-        console.log(this.newJson);
+        //console.log(this.newJson);
       });
   }
 
