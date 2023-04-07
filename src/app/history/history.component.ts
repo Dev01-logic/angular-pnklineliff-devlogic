@@ -52,6 +52,7 @@ export class HistoryComponent implements OnInit {
           }
           this.groupedData[key].PrescriptionNo.push(item.PrescriptionNo);
         }
+        console.log(this.groupedData);
       });
   }
 
@@ -65,9 +66,5 @@ export class HistoryComponent implements OnInit {
         DoctorName: item.DoctorName,
       },
     });
-  }
-
-  filterItemsOfVisitDate(VisitDate) {
-    return this.data.filter((x) => (x.data.VisitDate = VisitDate));
   }
 }
