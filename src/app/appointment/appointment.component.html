@@ -4,8 +4,8 @@
       <mat-card-subtitle> รายละเอียดนัดหมาย </mat-card-subtitle>
       <mat-card-subtitle
         >วันที่นัด: {{ group.AppointDateTimeFromShow }}
-        {{ group.AppointDateTimeFrom | date 'HH:mm' }} -
-        {{ group.AppointDateTimeTo | date 'HH:mm' }}</mat-card-subtitle
+        {{ group.AppointDateTimeFrom | date: 'HH:mm' }} -
+        {{ group.AppointDateTimeTo | date: 'HH:mm' }}</mat-card-subtitle
       >
       <mat-card-subtitle>คลินิก: {{ group.ClinicLocalName }}</mat-card-subtitle>
       <mat-card-subtitle>แพทย์: {{ group.DoctorLocalName }}</mat-card-subtitle>
