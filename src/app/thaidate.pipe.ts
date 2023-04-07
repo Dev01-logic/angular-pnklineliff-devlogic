@@ -78,4 +78,8 @@ export class ThaiDatePipe implements PipeTransform {
     }
     return returnDate;
   }
+  //{{ dateObj | thaidate }} <br>
+  //{{ dateObj | thaidate:'full' }} <br>
+  //{{ dateObj | thaidate:'medium' }} <br>
+  //{{ dateObj | thaidate:'short' }} <br>
 }
