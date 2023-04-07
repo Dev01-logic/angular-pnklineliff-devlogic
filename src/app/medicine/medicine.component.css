@@ -8,8 +8,8 @@
 .arrow-button {
   position: absolute;
   top: 50%;
-  right: 0;
-  transform: translateY(50%);
+  left: 0;
+  transform: translateY(-50%);
   width: 32px;
   height: 32px;
   font-size: 18px;
