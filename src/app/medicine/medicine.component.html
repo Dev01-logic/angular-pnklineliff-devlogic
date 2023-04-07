@@ -14,14 +14,10 @@
         <!--
         <mat-icon>keyboard_arrow_left</mat-icon>
         -->
-        <span style="">{{
-          visitdate | date: 'dd-MM-YYYY'
-        }}</span></mat-card-subtitle
+        <span style="">{{ visitdate | thaidate }}</span></mat-card-subtitle
       >
       <mat-card-subtitle
-        ><span style=""
-          >แพทย์: {{ doctor }}</span
-        ></mat-card-subtitle
+        ><span style="">แพทย์: {{ doctor }}</span></mat-card-subtitle
       >
     </mat-card-title-group>
   </mat-card-header>
