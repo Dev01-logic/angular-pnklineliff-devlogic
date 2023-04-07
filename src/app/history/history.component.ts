@@ -17,6 +17,7 @@ export class HistoryComponent implements OnInit {
   ) {}
 
   data: any;
+  groupedData = {};
   //title: String;
   //subtitle: String;
 
@@ -37,6 +38,20 @@ export class HistoryComponent implements OnInit {
         //console.log(this.data);
         //this.title = this.data.VisitDate;
         //this.subtitle = this.data.VN;
+        for (let i = 0; i < this.data.length; i++) {
+          let item = this.data[i];
+          let key = item.VN + item.VisitDate;
+          if (!this.groupedData[key]) {
+            this.groupedData[key] = {
+              PrescriptionNo: [],
+              VN: item.VN,
+              VisitDate: item.VisitDate,
+              DoctorName: [],
+              ClinicName: [],
+            };
+          }
+          this.groupedData[key].PrescriptionNo.push(item.PrescriptionNo);
+        }
       });
   }
 
@@ -53,6 +68,6 @@ export class HistoryComponent implements OnInit {
   }
 
   filterItemsOfVisitDate(VisitDate) {
-    return this.data.filter((x) => x.data.VisitDate = VisitDate);
+    return this.data.filter((x) => (x.data.VisitDate = VisitDate));
   }
 }
