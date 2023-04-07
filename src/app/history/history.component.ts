@@ -41,8 +41,8 @@ export class HistoryComponent implements OnInit {
         for (let i = 0; i < this.data.length; i++) {
           let item = this.data[i];
           let key = item.VN + item.VisitDate;
-          if (!this.groupedData['ListPastVisitResultDetail2']) {
-            this.groupedData['ListPastVisitResultDetail2'] = {
+          if (!this.groupedData[key]) {
+            this.groupedData[key] = {
               PrescriptionNo: [],
               VN: item.VN,
               VisitDate: item.VisitDate,
@@ -50,9 +50,9 @@ export class HistoryComponent implements OnInit {
               ClinicName: [],
             };
           }
-          this.groupedData['ListPastVisitResultDetail2'].PrescriptionNo.push(item.PrescriptionNo);
-          this.groupedData['ListPastVisitResultDetail2'].DoctorName.push(item.DoctorName);
-          this.groupedData['ListPastVisitResultDetail2'].ClinicName.push(item.ClinicName);
+          this.groupedData[key].PrescriptionNo.push(item.PrescriptionNo);
+          this.groupedData[key].DoctorName.push(item.DoctorName);
+          this.groupedData[key].ClinicName.push(item.ClinicName);
         }
         console.log(this.groupedData);
       });
