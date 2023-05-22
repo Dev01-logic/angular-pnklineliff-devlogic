@@ -1,10 +1,11 @@
-.card-header-content {
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.mat-card-header-avatar-right {
+  justify-content: space-between;
 }
 
-.mat-card-title-group {
-  margin-left: 30px; /* Adjust as needed */
+.mat-card-header-avatar-right ::ng-deep .mat-card-header-text {
+  margin-left: 0 !important;
+}
+
+.mat-card-header-avatar-right .mat-card-avatar {
+  order: 1;
 }
