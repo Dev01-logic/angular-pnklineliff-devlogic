@@ -14,9 +14,10 @@
           >IDCard: XXXXXXXXX{{ idcard.substring(9) }}</mat-card-subtitle
         >
         <mat-card-subtitle
-          >LineUser: {{ userid.substring(0, 5) }}XXXXXXXXXXXXXXXXXXXX{{
-            userid.substring(28)
-          }}</mat-card-subtitle
+          >
+          <h3 class="card-subtitle" [ngClass]="{'small-subtitle': isSubtitleOverflowing}" [title]="subtitleText">LineUser: {{ userid.substring(0, 5) }}XXXXXXXXXXXXXXXXXXXX{{
+          userid.substring(28)
+        }}</h3></mat-card-subtitle
         >
       </mat-card-title-group>
     </div>
