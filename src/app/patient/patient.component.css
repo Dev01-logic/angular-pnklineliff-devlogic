@@ -23,6 +23,12 @@
   }
 }
 
+@media (max-width: 440px) {
+  .card-subtitle {
+    font-size: 10px; /* Adjust as needed */
+  }
+}
+
 @media (max-width: 400px) {
   .card-subtitle {
     font-size: 8px; /* Adjust as needed */
