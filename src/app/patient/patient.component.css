@@ -10,3 +10,7 @@
 .title {
   flex-grow: 1;
 }
+
+.mat-card-subtitle {
+  white-space: normal;
+}
