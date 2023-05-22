@@ -3,19 +3,21 @@
     <div mat-card-avatar>
       <img mat-card-md-image src="{{ urlimg }}" />
     </div>
-    <mat-card-title-group>
-      <mat-card-title>Patient Information</mat-card-title>
-      <mat-card-subtitle>ชื่อ {{ name }}</mat-card-subtitle>
-      <mat-card-subtitle>อายุ {{ age }}</mat-card-subtitle>
-      <mat-card-subtitle>HN: {{ tmphn }}</mat-card-subtitle>
-      <mat-card-subtitle
-        >IDCard: XXXXXXXXX{{ idcard.substring(9) }}</mat-card-subtitle
-      >
-      <mat-card-subtitle
-        >LineUser: {{ userid.substring(0, 5) }}XXXXXXXXXXXXXXXXXXXXXXX{{
-          userid.substring(28)
-        }}</mat-card-subtitle
-      >
-    </mat-card-title-group>
+    <div>
+      <mat-card-title-group>
+        <mat-card-title>Patient Information</mat-card-title>
+        <mat-card-subtitle>ชื่อ {{ name }}</mat-card-subtitle>
+        <mat-card-subtitle>อายุ {{ age }}</mat-card-subtitle>
+        <mat-card-subtitle>HN: {{ tmphn }}</mat-card-subtitle>
+        <mat-card-subtitle
+          >IDCard: XXXXXXXXX{{ idcard.substring(9) }}</mat-card-subtitle
+        >
+        <mat-card-subtitle
+          >LineUser: {{ userid.substring(0, 5) }}XXXXXXXXXXXXXXXXXXXXXXX{{
+            userid.substring(28)
+          }}</mat-card-subtitle
+        >
+      </mat-card-title-group>
+    </div>
   </mat-card-header>
 </mat-card>
