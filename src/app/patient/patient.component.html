@@ -1,8 +1,10 @@
 <mat-card>
-<mat-card-header class="mat-card-header-avatar-right">
-    <div mat-card-avatar>
+<mat-card-header>
+<div class="header-content">
+<div class="avatar">
       <img mat-card-md-image src="{{ urlimg }}" />
     </div>
+    <div class="title">
       <mat-card-title-group>
         <mat-card-title>Patient Information</mat-card-title>
         <mat-card-subtitle>ชื่อ {{ name }}</mat-card-subtitle>
@@ -17,5 +19,7 @@
           }}</mat-card-subtitle
         >
       </mat-card-title-group>
+    </div>
+  </div>
   </mat-card-header>
 </mat-card>
